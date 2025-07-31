@@ -1,0 +1,125 @@
+{
+    "header": {
+        "home": "Accueil",
+        "about": "A propos",
+        "products": "Produits",
+        "realisations": "Réalisations",
+        "contact": "Contact",
+        "term": "Termes",
+        "privacy": "Confidentialité",
+        "copyright": "©2025 Alubassa. Tous les droits réservés",
+        "developed": "Propulsé par"
+    },
+    "contactFooter": {
+        "title": "Un projet? Une commande? Parlons en.",
+        "contactUs": "Nous contacter."
+    },
+    "home": {
+        "hero": {
+            "title": "L'aluminium, notre matière. La fiabilité notre engagement.",
+            "description": "Depuis plus de 60 ans, Alubassa conçoit et fabrique des articles en aluminium pensés pour durer. Que ce soit pour la cuisine, le bâtiment ou l'industrie, nos produits allient robustesse, précision et esthétisme.",
+            "ourProducts": "Nos produits",
+            "contactUs": "Nous contacter"
+        },
+        "imageText": {
+            "title": "Une expertise locale, une qualité internationale.",
+            "description1": "Depuis plus de trois décennies, Alubassa transforme l’aluminium au Cameroun pour en faire des produits robustes, fiables et adaptés aux besoins des foyers, des entreprises et des chantiers.",
+            "description2": "Notre mission ? Offrir à chaque client la garantie d’un produit bien conçu, bien fini, et fait pour durer.",
+            "button": "En savoir plus"
+        },
+        "expertise": {
+            "title": "Plus de 60 ans d’expérience",
+            "description": "Depuis notre création en 1963, nous avons perfectionné notre art de la transformation de l'aluminium. Cette riche histoire nous permet de garantir des produits d'une qualité et d'une durabilité inégalées, transmis de génération en génération."
+        },
+        "products": {
+            "title": "Des produits solides, pour des usages multiples.",
+            "description": "Nous concevons une large gamme d’articles en aluminium, destinés à la cuisine, à la construction ou à l’usage industriel.",
+            "cuisine": "Articles de cuisine",
+            "profile": "Profilés & tôles",
+            "industrie": "Solutions industrielles",
+            "seeAll": "Voir nos produits"
+        },
+        "whyUs": {
+            "title": "Pourquoi nos clients nous font confiance?",
+            "r1": "Fabrication locale de qualité",
+            "r2": "Plus de 30 ans d’expertise",
+            "r3": "Résistance & longévité prouvées",
+            "r4": "Livraison sur mesure selon vos besoins",
+            "r5": "Équipe engagée et réactive"
+        }
+    },
+    "Apropos": {
+        "name": "A propos",
+        "title": "A propos d'Alubassa",
+        "who": "Qui sommes-nous?",
+        "description1": "Alubassa est une entreprise camerounaise spécialisée dans la transformation de l’aluminium et la fabrication de solutions métalliques durables",
+        "description2": " Depuis plus de 10 ans, nous accompagnons les professionnels du bâtiment, les industriels et les particuliers avec des produits fiables, esthétiques et adaptés aux exigences locales. Basée à Douala, notre usine dispose d’un équipement moderne et d’une équipe d’experts engagés à offrir une qualité constante, dans le respect des normes et des délais.",
+        "titleMission": "Notre mission",
+        "descriptionMission": "Fournir des solutions en aluminium de qualité, accessibles et durables, qui participent à la construction d’un environnement bâti plus résistant et moderne en Afrique.",
+        "titleValues": "Nos valeurs",
+        "descriptionValues": "Être une référence nationale et régionale dans la transformation de l’aluminium, en combinant innovation, fiabilité et proximité avec nos clients.",
+        "titleExpertise": "Notre expertise",
+        "descriptionExpertise": {
+            "dex1": "Découpe et pliage de tôles sur mesure",
+            "dex2": "Fabrication de profilés pour le bâtiment, l’ameublement ou les installations industrielles",
+            "dex3": "Maîtrise du cycle complet, de la matière première au produit fini",
+            "dex4": "Maîtrise du cycle complet, de la matière première au produit fini"
+        },
+        "titleEngagement": "Notre expertise",
+        "descriptionEngagement": {
+            "den1": "Qualité constante grâce à des contrôles rigoureux",
+            "den2": "Délais respectés, même sur les commandes complexes",
+            "den3": "Équipe réactive et à l’écoute de vos besoins",
+            "den4": "Production locale, au service du développement industriel camerounais"
+        },
+        "equipeTitle": "Une équipe solide",
+        "equipeDescription": "Derrière chaque commande se trouve une équipe passionnée. Nos techniciens, ingénieurs, commerciaux et logisticiens travaillent ensemble pour garantir un service fluide et une satisfaction totale de nos clients."
+
+    },
+    "products": {
+        "name": "Nos Produits",
+        "title": "Des produits en aluminium pensés pour durer",
+        "cuisine": "Ustensiles de cuisine",
+        "desCuisine": {
+            "d1": "Marmites et faitouts (toutes tailles)",
+            "d2": "Casseroles, poêles et bassines",
+            "d3": "Plats et ustensiles de cuisson traditionnels",
+            "d4": "Produits robustes et durables, utilisés dans les cuisines familiales et professionnelles"
+        },
+        "industriel": "Solutions industrielles et techniques",
+        "desIndustriel": {
+            "d1":"Pièces usinées ou pliées sur mesure",
+            "d2": "Composants pour machines et châssis",
+            "d3": "Panneaux aluminium pour équipements industriels",
+            "d4": "Structures modulaires en aluminium"
+        },
+        "construction": "Produits de construction et d’aménagement",
+        "desConstruction": {
+            "d1": "Tôles en aluminium (brutes, larmées, anodisées…)",
+            "d2": "Profilés standards et sur mesure (plats, en U, en T, en L, tubulaires…)",
+            "d3": "Cornières, tubes, barres, plaques",
+            "d4": "Accessoires de fixation et finitions"
+        }
+    },
+    "realisations": {
+        "name": "Réalisations",
+        "title": "Nos Réalisations"
+    },
+    "contact": {
+        "name": "Contact",
+        "title": "Alubassa vous accompagne dans tous vos projets métallurgiques et industriels",
+        "localisation": "Localisation",
+        "zone": "Zone industrielle Bassa - Douala BP: 850 - Douala, Cameroun",
+        "mail": "Adresse mail",
+        "phone": "Numéro de téléphone",
+        "contactUs": "Nous contacter",
+        "description": "Notre équipe amicale serait ravie d'avoir de vos nouvelles.",
+        "firstName": "Prénom",
+        "lastName": "Nom",
+        "email": "Email",
+        "message": "Message",
+        "accept": "Vous acceptez notre",
+        "privacy": "politique de confidentialité.",
+        "send": "Envoyer le méssage"
+    }
+}
