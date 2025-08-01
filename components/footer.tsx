@@ -34,8 +34,8 @@ const Footer = () => {
         }
     ]
     return (
-        <footer className='flex flex-col bg-primary-900 pt-10'>
-            <div className='flex flex-col items-center justify-center gap-7 py-7 border-b border-b-primary'>
+        <footer className='flex flex-col items-center bg-primary-900 pt-10'>
+            <div className='w-full flex flex-col items-center justify-center gap-7 py-7 border-b border-b-primary'>
                 <img src="/logo2.png" alt="Logo" className='h-6 w-auto' />
                 <div className='flex flex-col md:flex-row items-center gap-2'>
                     {
@@ -45,8 +45,7 @@ const Footer = () => {
                     }
                 </div>
             </div>
-            <div className='flex flex-row items-center justify-between containerBloc h-[72px]'>
-                <div className='grid grid-cols-3 items-center justify-between gap-2 w-full'>
+                <div className=' w-full py-5 min-h-[72px] max-w-[1162px] px-7 flex flex-col lg:flex-row items-center justify-between gap-5'>
                     <div className='flex flex-row items-center gap-2'>
                         <Link className='text-[#A9CAFF] text-[14px] underline px-4 py-2 gap-2 rounded-[6px] h-9' href={"/"}>{t("term")}</Link>
                         <Link className='text-[#A9CAFF] text-[14px] underline px-4 py-2 gap-2 rounded-[6px] h-9' href={"/"}>{t("privacy")}</Link>
@@ -54,7 +53,6 @@ const Footer = () => {
                     <p className='text-[#A9CAFF] text-[14px]'>{t("copyright")}</p>
                     <p className='text-[#A9CAFF] text-[14px] text-end'>{`${t("developed")} `}<Link target='_blank' href={"https://krestdev.com/"}>{"Krestdev"}</Link></p>
                 </div>
-            </div>
         </footer>
     )
 }
