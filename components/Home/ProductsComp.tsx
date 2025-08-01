@@ -29,19 +29,19 @@ const ProductsComp = () => {
   console.log(tab);
 
   return (
-    <div className='flex flex-col gap-12 py-24'>
-      <div className='flex flex-col items-center max-w-[918px] gap-7 mx-auto'>
-        <h2 className='text-[#0F2E5E] text-center max-w-[]'>{t("title")}</h2>
+    <div className='component flex flex-col items-center gap-12 overflow-hidden'>
+      <div className='header-component'>
+        <h2 className='text-center'>{t("title")}</h2>
         <p className='text-center text-[16px]'>{t("description")}</p>
       </div>
-      <div className='flex flex-col gap-8 max-w-[1106px] mx-auto'>
-        <div className='flex gap-3 mx-auto'>
+      <div className='flex flex-col items-center gap-8 max-w-[1106px]'>
+        <div className='flex gap-3'>
           <Button onClick={() => setTab(0)} variant={"outline"} className={`${tab === 0 ? "bg-[#A9CAFF] hover:bg-[#A9CAFF]/80" : ""}`}>{t("cuisine")}</Button>
           <Button onClick={() => setTab(1)} variant={"outline"} className={`${tab === 1 ? "bg-[#A9CAFF] hover:bg-[#A9CAFF]/80" : ""}`}>{t("profile")}</Button>
           <Button onClick={() => setTab(2)} variant={"outline"} className={`${tab === 2 ? "bg-[#A9CAFF] hover:bg-[#A9CAFF]/80" : ""}`}>{t("industrie")}</Button>
         </div>
         <GridProduct images={imagesObj[tab].images.slice(0, 4)} />
-        <Link className='w-fit mx-auto' href={"/products"}>
+        <Link href={"/products"}>
           <Button variant={"outline"}>
             {t("seeAll")}
             <ChevronRight />

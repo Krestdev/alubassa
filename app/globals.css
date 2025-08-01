@@ -32,6 +32,9 @@
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+  --color-primary-800: var(--primary-800);
+  --color-primary-800-foreground: var(--primary-800-foreground);
+  --color-primary-900: var(--primary-900);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -43,41 +46,37 @@
 }
 
 @layer base {
-  html {
-    font-family: "Inter", sans-serif;
-  }
-
   body {
     @apply bg-white text-black;
   }
 
-  h1, h2, h3 {
-    @apply font-sans leading-[130%] tracking-[-2.5%];
+  h1, h2, h3, h4, h5, h6 {
+    @apply leading-[130%] tracking-[-0.02em];
   }
   h1 {
-    @apply text-[60px] font-bold text-primary;
+    @apply text-[28px] sm:text-[36px] md:text-[48px] lg:text-[60px] font-bold text-primary;
   }
   h2 {
-    @apply text-[40px] font-semibold text-[#0F2E5E];
+    @apply text-[24px] sm:text-[30px] md:text-[36px] lg:text-[40px] font-semibold text-primary-800;
   }
   h3 {
-    @apply text-[30px] font-semibold text-gray-900;
+    @apply text-[22px] sm:text-[24px] md:text-[30px] font-semibold text-gray-900;
   }
   p {
-    @apply font-sans text-[18px] font-normal leading-[150%] tracking-[0%];
+    @apply text-[16px] lg:text-[18px] leading-[150%] text-gray-700 ;
   }
 }
 
 @layer components {
   .containerBloc {
-    @apply max-w-[1440px] mx-auto px-4;
+    @apply max-w-[1162px] mx-auto px-7;
   }
-}
-
-body {
-  background-color: #ffffff;
-  color: #414651;
-  font-family: "Inter", sans-serif;
+  .component {
+    @apply max-w-[1162px] mx-auto px-7 py-10 sm:py-14 md:py-16 lg:py-20 min-[1124px]:py-24 transition-all duration-150 ease-linear;
+  }
+  .header-component {
+    @apply flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-7 items-center max-w-[918px];
+  }
 }
 
 :root {
@@ -88,8 +87,11 @@ body {
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #174286;
+  --primary: oklch(0.3909 0.1236 259.49);
   --primary-foreground: oklch(0.985 0 0);
+  --primary-800: oklch(0.3085 0.0933 259.13);
+  --primary-800-foreground: oklch(0.985 0 0);
+  --primary-900: oklch(0.2615 0.075 259.56);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);

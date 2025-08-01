@@ -2,17 +2,17 @@ import { useTranslations } from 'next-intl'
 import React from 'react'
 import ImageCarousel from './ImageCarousel';
 
-const CarouselComp = () => {
+const Experience = () => {
   const t = useTranslations("home.expertise");
   return (
-    <div className='flex flex-col gap-12 py-24 containerBloc'>
-      <div className='flex flex-col items-center max-w-[918px] gap-7 mx-auto'>
+    <div className='component px-0 max-w-full flex flex-col gap-7 sm:gap-10 lg:gap-12 items-center'>
+      <div className='px-7 lg:px-0 header-component'>
         <h2 className='text-black'>{t("title")}</h2>
-        <p className='text-center text-[16px]'>{t("description")}</p>
+        <p className='text-center'>{t("description")}</p>
       </div>
       <ImageCarousel />
     </div>
   )
 }
 
-export default CarouselComp
+export default Experience

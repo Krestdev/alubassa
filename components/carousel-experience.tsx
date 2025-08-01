@@ -19,6 +19,7 @@ type CarouselProps = {
   plugins?: CarouselPlugin
   orientation?: "horizontal" | "vertical"
   setApi?: (api: CarouselApi) => void
+  align?: "center"|"start"|"end";
 }
 
 type CarouselContextProps = {
@@ -54,12 +55,15 @@ const Carousel = React.forwardRef<
       plugins,
       className,
       children,
+      align = "start",
       ...props
     },
     ref
   ) => {
     const [carouselRef, api] = useEmblaCarousel(
       {
+        align: align,
+        containScroll: "trimSnaps",
         ...opts,
         axis: orientation === "horizontal" ? "x" : "y",
       },
@@ -162,7 +166,7 @@ const CarouselContent = React.forwardRef<
         ref={ref}
         className={cn(
           "flex",
-          orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
+          orientation === "horizontal" ? "ml-0" : "-mt-4 flex-col",
           className
         )}
         {...props}
@@ -185,7 +189,7 @@ const CarouselItem = React.forwardRef<
       aria-roledescription="slide"
       className={cn(
         "min-w-0 shrink-0 grow-0 basis-full",
-        orientation === "horizontal" ? "pl-4" : "pt-4",
+        orientation === "horizontal" ? "pl-0" : "pt-4",
         className
       )}
       {...props}
@@ -205,13 +209,12 @@ const CarouselPrevious = React.forwardRef<
       ref={ref}
       variant={variant}
       size={size}
-      className={"inline-flex size-12 items-center justify-center rounded-full text-secondary"}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowLeft size={32} strokeWidth={2} />
-      <span className="sr-only">Previous slide</span>
+      <ArrowLeft size={16} strokeWidth={2} />
+      <span className="sr-only">{"Previous slide"}</span>
     </Button>
   )
 })
@@ -228,13 +231,12 @@ const CarouselNext = React.forwardRef<
       ref={ref}
       variant={variant}
       size={size}
-      className={"inline-flex size-12 items-center justify-center rounded-full text-secondary"}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}
     >
       <ArrowRight size={32} strokeWidth={2} />
-      <span className="sr-only">Next slide</span>
+      <span className="sr-only">{"Next slide"}</span>
     </Button>
   )
 })

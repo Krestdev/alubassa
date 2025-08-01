@@ -34,10 +34,10 @@ const Footer = () => {
         }
     ]
     return (
-        <div className='flex flex-col bg-[#0C2348] pt-10'>
-            <div className='flex flex-col items-center gap-7 py-7 border-b border-b-primary'>
-                <img src="/logo2.png" alt="Logo" className='h-6 w-auto mx-auto' />
-                <div className='flex items-center gap-2'>
+        <footer className='flex flex-col bg-primary-900 pt-10'>
+            <div className='flex flex-col items-center justify-center gap-7 py-7 border-b border-b-primary'>
+                <img src="/logo2.png" alt="Logo" className='h-6 w-auto' />
+                <div className='flex flex-col md:flex-row items-center gap-2'>
                     {
                         pages.map((page) => (
                             <Button variant={"ghost"} onClick={() => router.push(page.url)} className='text-white mx-auto' key={page.title}>{page.title}</Button>
@@ -52,10 +52,10 @@ const Footer = () => {
                         <Link className='text-[#A9CAFF] text-[14px] underline px-4 py-2 gap-2 rounded-[6px] h-9' href={"/"}>{t("privacy")}</Link>
                     </div>
                     <p className='text-[#A9CAFF] text-[14px]'>{t("copyright")}</p>
-                    <p className='text-[#A9CAFF] text-[14px] text-end'>{t("developed") + " "}<Link target='_blank' href={"https://krestdev.com/"}>Krestdev</Link></p>
+                    <p className='text-[#A9CAFF] text-[14px] text-end'>{`${t("developed")} `}<Link target='_blank' href={"https://krestdev.com/"}>{"Krestdev"}</Link></p>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }
 

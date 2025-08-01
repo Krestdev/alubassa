@@ -2,15 +2,15 @@
 
 import { Button } from '@/components/ui/button'
 import { useTranslations } from 'next-intl'
-import { usePathname, useRouter } from 'next/navigation'
-import React from 'react'
-import LocaleSwitcher from './Lang/localSwitcher'
 import Link from 'next/link'
+import LocaleSwitcher from './Lang/localSwitcher'
+import Navlink from './navlink'
+import MenuToggle from './menuToggle'
+import { useState } from 'react'
 
 const Header = () => {
-    const t = useTranslations("header")
-    const router = useRouter();
-    const pathname = usePathname();
+    const t = useTranslations("header");
+    const [menuToggle, setMenuToggle] = useState(false);
 
     const pages = [
         {
@@ -31,24 +31,25 @@ const Header = () => {
         }
     ]
 
-    const isActive = (url: string) => {
-        return pathname === url;
-    }
-
     return (
-        <div className='flex flex-row items-center justify-between containerBloc h-[88px] px-[167px]'>
+        <div className='flex items-center justify-between containerBloc h-[88px]'>
             <div className='flex flex-row items-center gap-4'>
                 <Link href={"/"}><img src="/logo.png" alt="logo" className='h-6 w-auto' /></Link>
-                {
-                    pages.map((page) => (
-                        <Button variant={"ghost"} onClick={() => router.push(page.url)} key={page.title} className={isActive(page.url) ? "text-primary" : ""}>{page.title}</Button>
-                    ))
-                }
+                <span className='hidden lg:flex gap-2'>
+                    {
+                        pages.map((page, id) => (
+                            <Navlink key={id} title={page.title} href={page.url}/>
+                        ))
+                    }
+                </span>
             </div>
-            <div className='flex flex-row items-center gap-3'>
+            <div className='hidden lg:flex flex-row items-center gap-3'>
                 <LocaleSwitcher />
-                <Button variant={"default"} onClick={() => router.push("/contacts")}>{t("contact")}</Button>
+                <Link href={"/contact"}><Button variant={"default"}>{t("contact")}</Button></Link>
             </div>
+            <span className='inline-block lg:hidden'>
+                <MenuToggle isOpen={menuToggle} toggle={()=>{setMenuToggle(prev=> !prev)}} />
+            </span>
         </div>
     )
 }

@@ -5,19 +5,19 @@ import React from 'react'
 
 const WhyUs = () => {
     const t = useTranslations("home.whyUs");
-    const reponses = [t("r1"), t("r2"), t("r3"), t("r4"), t("r5")];
+    const answers = [t("r1"), t("r2"), t("r3"), t("r4"), t("r5")];
   return (
-    <div className='grid grid-cols-2 gap-18 py-24 max-w-[1106px] w-full mx-auto'>
-        <img src="/Images/whyus.webp" alt="Wy Us" className='w-full h-full rounded-[12px] object-center' />
+    <div className='component grid grid-cols-1 gap-7 lg:grid-cols-2 md:gap-12 lg:gap-18 place-items-center'>
+        <img src="/Images/whyus.webp" alt="Wy Us" className='w-full h-auto aspect-video rounded-lg object-cover' />
         <div className='flex flex-col gap-7 px-7'>
-            <h2 className='text-[#0F2E5E]'>{t("title")}</h2>
+            <h2>{t("title")}</h2>
             <div className='flex flex-col gap-5'>
                 {
-                    reponses.map((r, index) => {
+                    answers.map((item, index) => {
                         return(
                             <div key={index} className='flex items-center gap-[22px]'>
                                 <LucideShieldCheck />
-                                <p>{r}</p>
+                                <p>{item}</p>
                             </div>
                         )
                     })

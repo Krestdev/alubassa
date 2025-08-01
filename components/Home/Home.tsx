@@ -1,8 +1,9 @@
-import React from 'react'
-import Hero from './Hero'
-import ImageText from './ImageText'
+import { ChevronRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
-import CarouselComp from './CarouselComp'
+import Link from 'next/link'
+import { Button } from '../ui/button'
+import Experience from './CarouselComp'
+import Hero from './Hero'
 import Partner from './Partner'
 import ProductsComp from './ProductsComp'
 import WhyUs from './WhyUs'
@@ -13,14 +14,15 @@ const Home = () => {
   return (
     <div>
       <Hero />
-      <ImageText
-        title={t("title")}
-        description1={t("description1")}
-        description2={t("description2")}
-        button={t("button")}
-        image={"/Images/expertise.webp"}
-      />
-      <CarouselComp />
+      <section className='component flex flex-col-reverse gap-7 lg:flex-row sm:gap-10 lg:justify-between'>
+        <div className='w-full lg:max-w-[542px] grid gap-7'>
+          <h2>{t("title")}</h2>
+          <p>{t("description1")}<br/>{t("description2")}</p>
+          <Link href={"/about"}><Button variant={"outline"}>{"En savoir plus"}<ChevronRight size={16}/></Button></Link>
+        </div>
+        <img src="/Images/expertise.webp" alt="alubassa team" className='w-full h-auto max-w-lg lg:max-w-md aspect-[4/3] rounded-md object-cover'/>
+      </section>
+      <Experience />
       <Partner />
       <ProductsComp />
       <WhyUs />
