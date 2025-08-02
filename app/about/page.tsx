@@ -1,14 +1,23 @@
 import Values from '@/components/About/Values'
-import ImageText from '@/components/Home/ImageText'
 import Partner from '@/components/Home/Partner'
+import { RevealGroup } from '@/components/reveal'
+import { Button } from '@/components/ui/button'
+import { ChevronRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
-import React from 'react'
+import Link from 'next/link'
 
 const Page = () => {
   const t = useTranslations("Apropos")
   return (
     <div>
-      <ImageText title={t("who")} description1={t("description1")} description2={t("description2")} image={'/Images/expertise.webp'} className1='font-bold max-w-[542px]' />
+      <RevealGroup y={20} delay={0.125} delayGap={0.25} className='component flex flex-col-reverse gap-7 lg:flex-row sm:gap-10 lg:justify-between'>
+        <div className='w-full lg:max-w-[542px] grid gap-7'>
+          <h2>{t("who")}</h2>
+          <p><strong>{t("description1")}</strong><br/>{t("description2")}</p>
+          <Link href={"/about"}><Button variant={"outline"}>{"En savoir plus"}<ChevronRight size={16}/></Button></Link>
+        </div>
+        <img src="/Images/expertise.webp" alt="alubassa team" className='w-full h-auto max-w-lg lg:max-w-md aspect-[4/3] rounded-md object-cover'/>
+      </RevealGroup>
       <Values />
       <Partner />
       <div

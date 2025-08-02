@@ -6,6 +6,7 @@ import { Button } from '../ui/button';
 import GridProduct from './GridProduct';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
+import { RevealGroup } from '../reveal';
 
 const ProductsComp = () => {
   const t = useTranslations("home.products");
@@ -29,7 +30,7 @@ const ProductsComp = () => {
   console.log(tab);
 
   return (
-    <div className='component flex flex-col items-center gap-12 overflow-hidden'>
+    <RevealGroup y={20} delay={0.125} delayGap={0.25} blur={2} className='component flex flex-col items-center gap-12 overflow-hidden'>
       <div className='header-component'>
         <h2 className='text-center'>{t("title")}</h2>
         <p className='text-center text-[16px]'>{t("description")}</p>
@@ -48,7 +49,7 @@ const ProductsComp = () => {
           </Button>
         </Link>
       </div>
-    </div>
+    </RevealGroup>
   )
 }
 

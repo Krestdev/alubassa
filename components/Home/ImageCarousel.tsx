@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import {
   Carousel,
   CarouselApi,
@@ -8,9 +7,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/carousel-experience";
-import Autoplay from "embla-carousel-autoplay";
-import { RevealGroup } from "@/components/reveal";
 import { cn } from "@/lib/utils";
+import Autoplay from "embla-carousel-autoplay";
+import React from "react";
 
 function ImageCarousel() {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -29,19 +28,12 @@ function ImageCarousel() {
   const images = ["/car.webp", "/car.webp", "/car.webp"];
 
   return (
-    <RevealGroup
-      tag="section"
-      id="services"
-      className="container-base flex flex-col items-center gap-6 sm:gap-10 overflow-x-hidden"
-      y={25}
-      delayGap={0.25}
-    >
       <Carousel
         opts={{ loop: true }}
         plugins={[Autoplay({ delay: 5000 })]}
         setApi={setApi}
         align="center"
-        className="mx-auto w-full px-4"
+        className="mx-auto w-full px-4 max-w-[1165px] overflow-hidden"
       >
         <CarouselContent className="max-w-[1162px] gap-10 items-center h-full">
           {images.map((image, i) => {
@@ -75,7 +67,6 @@ function ImageCarousel() {
           <CarouselNext />
         </span>
       </Carousel>
-    </RevealGroup>
   );
 }
 
