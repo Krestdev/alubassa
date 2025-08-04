@@ -20,15 +20,10 @@ const Page = () => {
       </RevealGroup>
       <Values />
       <Partner />
-      <div
-        style={{
-          backgroundImage: "url('/Images/whyUs.webp')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-        className='w-full px-[167px] py-24'>
-          <div className='flex items-center justify-end gap-2 p-7'>
-            <div className='max-w-[448px] w-full h-auto aspect-video bg-white rounded-[12px] flex flex-col gap-7 p-7'>
+      <div className='component max-w-full relative'>
+        <div className="absolute -z-10 w-full h-full top-0 left-0 bg-[url('/images/technicians-2k.webp')] bg-cover bg-center"/>
+          <div className='max-w-[1162px] w-full mx-auto flex justify-center md:justify-end p-0 sm:p-7'>
+            <div className='max-w-[448px] w-full bg-white rounded-[12px] title-description p-7'>
               <h2>{t("equipeTitle")}</h2>
               <p>{t("equipeDescription")}</p>
             </div>

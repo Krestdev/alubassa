@@ -1,5 +1,6 @@
 import CarouselComp from '@/components/Home/CarouselComp';
 import GridPlusText from '@/components/Products/GridPlusText';
+import { RevealGroup } from '@/components/reveal';
 import { useTranslations } from 'next-intl';
 import React from 'react'
 
@@ -26,15 +27,15 @@ const Page = () => {
 
   return (
     <div>
-        <div className='flex flex-col gap-[60px] py-24 max-w-[1106px] w-full mx-auto'>
+        <RevealGroup y={20} blur={3} opacity={0} delayGap={0.25} className='component flex flex-col gap-[60px]'>
             {
                 produits.map((produit, index) => {
                     return (
-                        <GridPlusText key={index} title={produit.title} images={produit.images} descriptions={produit.description} direction={index % 2 === 0 ? "flex-row" : "flex-row-reverse"} />
+                        <GridPlusText key={index} title={produit.title} images={produit.images} descriptions={produit.description} className={index % 2 === 0 ? "" : "order-0 lg:order-2"} />
                     )
                 })
             }
-        </div> 
+        </RevealGroup> 
       <CarouselComp />
     </div>
   )

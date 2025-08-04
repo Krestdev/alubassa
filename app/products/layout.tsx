@@ -1,5 +1,7 @@
 import Head from '@/components/Head'
+import { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
+import { getLocale } from 'next-intl/server'
 import React from 'react'
 
 interface Props {
@@ -19,7 +21,11 @@ const ProductsLayout = ({ children }: Props) => {
 
 export default ProductsLayout
 
-export const metadata = {
-    title: "Nos produits", 
-    description: "Our products", 
+export async function generateMetadata():Promise<Metadata> {
+    const locale = await getLocale();
+   const messages = (await import(`@/messages/${locale}.json`)).default
+   return {
+       title: messages.products.metatitle, 
+       description:  messages.products.metadescription, 
+   }
 }

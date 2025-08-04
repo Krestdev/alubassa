@@ -1,6 +1,5 @@
 "use client"
 
-import React from 'react'
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -16,28 +15,34 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from '../ui/checkbox';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import { Checkbox } from '../ui/checkbox';
+import Reveal from "../reveal";
+import { toast } from "../ui/sonner";
+import { useState } from "react";
+import { Loader } from "lucide-react";
+//import { toast } from "sonner";
 
 const formSchema = z.object({
     firstName: z.string().min(2, {
-        message: "Le prénom doit contenir au moins 2 caractères.",
-    }),
+        message: "Trop court",
+    }).max(21,{message:"Trop long"}),
     lastName: z.string().min(2, {
-        message: "Le nom doit contenir au moins 2 caractères.",
-    }),
+        message: "Trop court",
+    }).max(21, {message: "Trop long"}),
     email: z.string().email({
         message: "Veuillez entrer une adresse email valide.",
     }),
-    phone: z.string().min(10, {
-        message: "Le numéro de téléphone doit contenir au moins 10 chiffres.",
+    phone: z.string().min(9, {
+        message: "Veuillez entre un numéro valide",
     }),
+    subject: z.string().min(3, {message: "Trop court"}).max(30, {message: "Trop long"}),
     message: z.string().min(10, {
-        message: "Le message doit contenir au moins 10 caractères.",
+        message: "Trop court",
     }),
     privacyPolicy: z.boolean().refine((val) => val === true, {
-        message: "Vous devez accepter les politiques de confidentialité.",
+        message: "Veuillez accepter pour soumettre votre message",
     }),
 });
 
@@ -48,6 +53,7 @@ const ContactForm = () => {
         defaultValues: {
             firstName: "",
             lastName: "",
+            subject: "",
             email: "",
             phone: "",
             message: "",
@@ -55,25 +61,63 @@ const ContactForm = () => {
         },
     });
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values);
-        // Ici vous pourriez ajouter la logique pour envoyer les données à votre API
+    const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+        setIsSubmitting(true);
+         try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+
+        body: JSON.stringify({
+          firstName: values.firstName,
+          lastName: values.lastName,
+          email: values.email,
+          phone: values.phone,
+          subject: values.subject,
+          message: values.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        setIsSubmitting(false);
+        toast({title: "Erreur d'envoi", description:"Une erreur s'est produite pendant l'envoi de votre message", button:{label: "Ressayer", onClick:()=>{}}, variant: "destructive"});
+        throw new Error(result.error || "Erreur serveur");
+      }
+
+      setIsSubmitting(false);
+      toast({title: t("success"), variant: "success"});
+      form.reset();
+
+
+    } catch (error: any) {
+        setIsSubmitting(false);
+      toast({title:t("error"), variant: "destructive", description: error.message});
+      console.error("Erreur:", error);
+    }
     }
 
     const t = useTranslations("contact")
 
     return (
-        <div className='flex flex-row gap-[72px] max-w-[1106px] w-full mx-auto py-24'>
-            <img src="/contact.webp" alt="Contact" className='max-w-[376px] w-full h-fit aspect-[3/4] rounded-[12px] object-cover' />
+        <div className='component grid grid-cols-1 md:grid-cols-5 gap-7 sm:gap-10 md:gap-14 lg:gap-[72px]'>
+            <Reveal blur={3} y={20} className="hidden md:block col-span-2">
+                <img src="/contact.webp" alt="Contact" className='w-full h-fit aspect-[3/4] rounded-[12px] object-cover' />
+            </Reveal>
 
-            <div className='flex flex-col gap-12'>
+            <Reveal blur={3} opacity={50} y={20} delay={0.35} className='col-span-1 md:col-span-3 flex flex-col gap-12'>
                 <div className='flex flex-col gap-5'>
                     <h2 className='text-black'>{t("contactUs")}</h2>
-                    <p className='text-gray-700 text-[16px] max-w-[480px] w-full'>{t("description")}</p>
+                    <p>{t("description")}</p>
                 </div>
                 <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-[658px] w-full">
-                        <div className='max-w-[480px] w-full mx-auto flex flex-col gap-8'>
+                    <form onSubmit={form.handleSubmit(onSubmit)}>
+                        <div className='flex flex-col gap-8'>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {/* Champ Prénom */}
                                 <FormField
@@ -114,7 +158,7 @@ const ContactForm = () => {
                                     <FormItem>
                                         <FormLabel>{t("email")}</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="votre@email.com" {...field} />
+                                            <Input placeholder="ex. votre@email.com" {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -129,7 +173,22 @@ const ContactForm = () => {
                                     <FormItem>
                                         <FormLabel>{t("phone")}</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="+237 6XX XX XX XX" {...field} />
+                                            <Input placeholder="ex. +237 655 55 55 55" {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+
+                            {/* Champ Sujet */}
+                            <FormField
+                                control={form.control}
+                                name="subject"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>{t("subject")}</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="ex. Prise de contact" {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -145,7 +204,7 @@ const ContactForm = () => {
                                         <FormLabel>{t("message")}</FormLabel>
                                         <FormControl>
                                             <Textarea
-                                                placeholder=""
+                                                placeholder="Rédigez votre message"
                                                 className="min-h-[120px]"
                                                 {...field}
                                             />
@@ -159,19 +218,19 @@ const ContactForm = () => {
                                 control={form.control}
                                 name="privacyPolicy"
                                 render={({ field }) => (
-                                    <FormItem className="flex flex-row items-start space-x-3">
+                                    <FormItem className='flex flex-row gap-2 items-center flex-wrap'>
                                         <FormControl>
                                             <Checkbox
                                                 checked={field.value}
                                                 onCheckedChange={field.onChange}
                                             />
                                         </FormControl>
-                                        <div className="space-y-1 leading-none">
+                                        <div className="space-y-1">
                                             <FormLabel>
-                                                {t("accept")}{" "}
+                                                {t("accept")}
                                                 <Link
                                                     href="/politique-de-confidentialite"
-                                                    className="text-primary underline"
+                                                    className="underline"
                                                     target="_blank"
                                                 >
                                                     {t("privacy")}
@@ -183,13 +242,16 @@ const ContactForm = () => {
                                 )}
                             />
 
-                            <Button type="submit" className="w-full">
+                            <Button type="submit" className="w-full" disabled={isSubmitting}>
+                                {
+                                    isSubmitting && <Loader size={16} className="animate-spin"/>
+                                }
                                 {t("send")}
                             </Button>
                         </div>
                     </form>
                 </Form>
-            </div>
+            </Reveal>
         </div>
     )
 }

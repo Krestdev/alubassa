@@ -77,6 +77,59 @@
   .header-component {
     @apply flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-7 items-center max-w-[918px];
   }
+  .title-description {
+    @apply flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-7;
+  }
+  .first-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: 
+    "photo1 photo2 photo2 photo3"
+    "photo4 photo2 photo2 photo5";
+  gap: 22px;
+}
+.second-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: 
+    "item1 item2 item5 item5"
+    "item3 item4 item5 item5";
+  gap: 22px;
+}
+
+.first-gallery > .photo1 { grid-area: photo1; }
+.first-gallery > .photo2 { grid-area: photo2; }
+.first-gallery > .photo3 { grid-area: photo3; }
+.first-gallery > .photo4 { grid-area: photo4; }
+.first-gallery > .photo5 { grid-area: photo5; }
+
+.second-gallery > .item1 { grid-area: item1; }
+.second-gallery > .item2 { grid-area: item2; }
+.second-gallery > .item3 { grid-area: item3; }
+.second-gallery > .item4 { grid-area: item4; }
+.second-gallery > .item5 { grid-area: item5; }
+
+@media (max-width: 640px) {
+  .first-gallery {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "photo1"
+      "photo3"
+      "photo2"
+      "photo4"
+      "photo5";
+  }
+  .second-gallery {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "item1"
+      "item3"
+      "item2"
+      "item4"
+      "item5";
+  }
+}
+
 }
 
 :root {

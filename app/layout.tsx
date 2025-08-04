@@ -7,6 +7,7 @@ import Footer from "@/components/footer"
 import ContactFooter from "@/components/ContactFooter"
 import { Metadata } from "next"
 import { cn } from '@/lib/utils';
+import { Toaster } from "@/components/ui/sonner"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -59,6 +60,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {children}
           <ContactFooter />
           <Footer />
+          <Toaster/>
         </NextIntlClientProvider>
       </body>
     </html>

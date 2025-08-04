@@ -7,24 +7,23 @@ const Values = () => {
     const descEx = [t("descriptionExpertise.dex1"), t("descriptionExpertise.dex2"), t("descriptionExpertise.dex3"), t("descriptionExpertise.dex4")];
     const descEn = [t("descriptionEngagement.den1"), t("descriptionEngagement.den2"), t("descriptionEngagement.den3"), t("descriptionEngagement.den4")];
   return (
-    <div className='max-w-[1106px] w-full mx-auto px-7 py-24 flex flex-col gap-12'>
-        <div className='grid grid-cols-2 gap-18'>
-            <div className='flex flex-col gap-7'>
-                <h2 className='text-[#0F2E5E]'>{t("titleMission")}</h2>
+    <div className='component grid grid-cols-1 sm:grid-cols-2 gap-y-7 sm:gap-y-10 md:gap-y-12 gap-x-10 sm:gap-x-12 md:gap-x-14 lg:gap-x-[72px]'>
+            <div className='title-description'>
+                <h2>{t("titleMission")}</h2>
                 <p>{t("descriptionMission")}</p>
             </div>
-            <div className='flex flex-col gap-7'>
-                <h2 className='text-[#0F2E5E]'>{t("titleValues")}</h2>
+            <div className='title-description'>
+                <h2>{t("titleValues")}</h2>
                 <p>{t("descriptionValues")}</p>
             </div>
-            <div className='flex flex-col gap-7'>
-                <h2 className='text-[#0F2E5E]'>{t("titleExpertise")}</h2>
+            <div className='title-description'>
+                <h2>{t("titleExpertise")}</h2>
                 <div className='flex flex-col gap-5'>
                     {
                         descEx.map((d, index) => {
                             return(
                                 <div key={index} className='flex items-center gap-[22px]'>
-                                    <LucideWrench />
+                                    <LucideWrench size={20} className='shrink-0'/>
                                     <p className='max-w-[406px]'>{d}</p>
                                 </div>
                             )
@@ -32,14 +31,14 @@ const Values = () => {
                     }
                 </div>
             </div>
-            <div className='flex flex-col gap-7'>
-                <h2 className='text-[#0F2E5E]'>{t("titleEngagement")}</h2>
+            <div className='title-description'>
+                <h2>{t("titleEngagement")}</h2>
                 <div className='flex flex-col gap-5'>
                     {
                         descEn.map((d, index) => {
                             return(
                                 <div key={index} className='flex items-center gap-[22px]'>
-                                    <LucideStar />
+                                    <LucideStar size={20} className='shrink-0'/>
                                     <p className='max-w-[406px]'>{d}</p>
                                 </div>
                             )
@@ -47,7 +46,6 @@ const Values = () => {
                     }
                 </div>
             </div>
-        </div>
       
     </div>
   )

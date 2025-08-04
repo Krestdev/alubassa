@@ -16,7 +16,7 @@
     },
     "contactFooter": {
         "title": "Un projet? Une commande? Parlons en.",
-        "contactUs": "Nous contacter."
+        "contactUs": "Nous contacter"
     },
     "home": {
         "hero": {
@@ -53,6 +53,8 @@
         }
     },
     "Apropos": {
+        "metatitle": "À propos d’Alubassa – Expertise et Innovation Métallurgique",
+        "metadescription":"Alubassa, acteur de référence en Afrique centrale, met son savoir-faire en aluminium et acier au service de l’industrie, du bâtiment et des ménages depuis plus de 10 ans.",
         "name": "A propos",
         "title": "A propos d'Alubassa",
         "who": "Qui sommes-nous?",
@@ -81,6 +83,8 @@
 
     },
     "products": {
+        "metatitle":"Nos Produits – Aluminium, Acier, Ustensiles et Plus",
+        "metadescription":"Parcourez notre catalogue de produits : profilés, tôles, bardages, gouttières, marmites, ustensiles de cuisine, menuiserie aluminium et solutions industrielles.",
         "name": "Nos Produits",
         "title": "Des produits en aluminium pensés pour durer",
         "cuisine": "Ustensiles de cuisine",
@@ -106,10 +110,14 @@
         }
     },
     "realisations": {
+        "metatitle": "Nos Réalisations – Projets et Références",
+        "metadescription": "Découvrez nos projets réalisés dans les secteurs du bâtiment, de l’industrie, et des équipements publics. Alubassa, un partenaire de confiance.",
         "name": "Réalisations",
         "title": "Nos Réalisations"
     },
     "contact": {
+        "metatitle":"Contactez-nous",
+        "metadescription": "Besoin d’informations ou d’un devis ? Contactez l’équipe Alubassa à Douala. Par téléphone, email ou via notre formulaire, nous sommes à votre écoute.",
         "name": "Contact",
         "title": "Alubassa vous accompagne dans tous vos projets métallurgiques et industriels",
         "localisation": "Localisation",
@@ -124,6 +132,83 @@
         "message": "Message",
         "accept": "Vous acceptez notre",
         "privacy": "politique de confidentialité.",
-        "send": "Envoyer le méssage"
-    }
+        "send": "Envoyer le méssage",
+        "subject": "Sujet",
+        "success": "Votre message a été envoyé avec succès",
+        "error": "Erreur lors de l'envoi de votre message"
+    },
+    "terms": {
+    "meta": {
+      "title": "Termes et Conditions - Alubassa",
+      "description": "Consultez les conditions d'utilisation du site d'Alubassa et les règles relatives à nos services, produits et responsabilité."
+    },
+    "title": "Termes et Conditions",
+    "sections": [
+      {
+        "title": "1. Introduction",
+        "content": "Bienvenue sur le site www.alubassa.com. En accédant ou en utilisant ce site, vous acceptez les présentes conditions générales. Si vous êtes en désaccord avec une partie de ces conditions, veuillez ne pas utiliser notre site."
+      },
+      {
+        "title": "2. Propriété intellectuelle",
+        "content": "Tous les contenus présents sur ce site (textes, images, logos, vidéos, etc.) sont la propriété exclusive d’Alubassa ou utilisés avec autorisation. Toute reproduction ou diffusion non autorisée est interdite."
+      },
+      {
+        "title": "3. Utilisation du site",
+        "content": "Vous vous engagez à ne pas utiliser ce site à des fins illicites ou interdites par la loi. Vous ne devez pas tenter de compromettre la sécurité, l'intégrité ou le bon fonctionnement du site."
+      },
+      {
+        "title": "4. Produits et services",
+        "content": "Les informations fournies sur les produits et services sont données à titre indicatif. Alubassa se réserve le droit de modifier à tout moment les caractéristiques, prix ou disponibilités sans préavis."
+      },
+      {
+        "title": "5. Liens vers des sites tiers",
+        "content": "Le site peut contenir des liens vers d'autres sites web. Alubassa décline toute responsabilité quant au contenu ou à l'exactitude de ces sites."
+      },
+      {
+        "title": "6. Limitation de responsabilité",
+        "content": "Alubassa ne pourra être tenue responsable des dommages directs ou indirects liés à l’utilisation de ce site."
+      },
+      {
+        "title": "7. Droit applicable",
+        "content": "Les présentes conditions sont régies par la législation camerounaise. Tout litige sera soumis à la compétence des tribunaux de Douala, Cameroun."
+      }
+    ]
+  },
+  "privacy": {
+    "meta": {
+      "title": "Politique de Confidentialité - Alubassa",
+      "description": "Découvrez comment Alubassa protège vos données personnelles et respecte votre vie privée en conformité avec la loi."
+    },
+    "title": "Politique de Confidentialité",
+    "sections": [
+      {
+        "title": "1. Collecte des données",
+        "content": "Nous recueillons certaines données personnelles lorsque vous remplissez notre formulaire de contact ou que vous demandez un devis. Ces données peuvent inclure : nom, adresse email, téléphone, entreprise, etc."
+      },
+      {
+        "title": "2. Utilisation des données",
+        "content": "Les données collectées sont utilisées uniquement pour vous contacter, répondre à vos demandes, et améliorer nos services. Elles ne seront jamais vendues ou partagées à des tiers sans votre consentement."
+      },
+      {
+        "title": "3. Cookies",
+        "content": "Le site peut utiliser des cookies pour améliorer votre navigation. Vous pouvez à tout moment configurer votre navigateur pour refuser les cookies."
+      },
+      {
+        "title": "4. Sécurité",
+        "content": "Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles afin de protéger vos données contre l’accès non autorisé."
+      },
+      {
+        "title": "5. Durée de conservation",
+        "content": "Vos données sont conservées pendant une durée maximale de 3 ans, sauf obligation légale contraire."
+      },
+      {
+        "title": "6. Vos droits",
+        "content": "Conformément à la réglementation en vigueur, vous disposez d’un droit d’accès, de rectification et de suppression de vos données. Pour exercer ces droits, contactez-nous à contact@alubassa.com."
+      },
+      {
+        "title": "7. Modifications",
+        "content": "Cette politique peut être mise à jour à tout moment. Nous vous recommandons de la consulter régulièrement."
+      }
+    ]
+  }
 }

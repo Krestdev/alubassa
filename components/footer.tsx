@@ -39,16 +39,18 @@ const Footer = () => {
                 <img src="/logo2.png" alt="Logo" className='h-6 w-auto' />
                 <div className='flex flex-col md:flex-row items-center gap-2'>
                     {
-                        pages.map((page) => (
-                            <Button variant={"ghost"} onClick={() => router.push(page.url)} className='text-white mx-auto' key={page.title}>{page.title}</Button>
+                        pages.map((page, id) => (
+                            <Link key={id} href={page.url}>
+                                <Button variant={"ghost"} className='text-white mx-auto'>{page.title}</Button>
+                            </Link>
                         ))
                     }
                 </div>
             </div>
                 <div className=' w-full py-5 min-h-[72px] max-w-[1162px] px-7 flex flex-col lg:flex-row items-center justify-between gap-5'>
                     <div className='flex flex-row items-center gap-2'>
-                        <Link className='text-[#A9CAFF] text-[14px] underline px-4 py-2 gap-2 rounded-[6px] h-9' href={"/"}>{t("term")}</Link>
-                        <Link className='text-[#A9CAFF] text-[14px] underline px-4 py-2 gap-2 rounded-[6px] h-9' href={"/"}>{t("privacy")}</Link>
+                        <Link className='text-[#A9CAFF] text-[14px] underline px-4 py-2 gap-2 rounded-[6px] h-9' href={"/terms"}>{t("term")}</Link>
+                        <Link className='text-[#A9CAFF] text-[14px] underline px-4 py-2 gap-2 rounded-[6px] h-9' href={"/privacy"}>{t("privacy")}</Link>
                     </div>
                     <p className='text-[#A9CAFF] text-[14px]'>{t("copyright")}</p>
                     <p className='text-[#A9CAFF] text-[14px] text-end'>{`${t("developed")} `}<Link target='_blank' href={"https://krestdev.com/"}>{"Krestdev"}</Link></p>

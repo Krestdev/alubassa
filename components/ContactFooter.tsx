@@ -1,10 +1,15 @@
+'use client'
 import { useTranslations } from "next-intl";
 import React from "react";
 import { Button } from "./ui/button";
 import { RevealEffect } from "./reveal";
+import { usePathname } from "next/navigation";
 
 const ContactFooter = () => {
   const t = useTranslations("contactFooter");
+  const path = usePathname();
+
+  if(path === "/contact") return null;
 
   return (
     <div className="relative flex flex-col component max-w-full">
