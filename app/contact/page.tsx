@@ -1,16 +1,16 @@
 import ContactForm from "@/components/Contact/ContactForm";
 import IconBox from "@/components/Contact/IconBox";
+import Reveal from "@/components/reveal";
+import { formatNumber } from "@/lib/utils";
 import { LucideMail, LucidePhone, MapPinIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { infos } from "./infos";
-import { formatNumber } from "@/lib/utils";
-import Reveal, { RevealGroup } from "@/components/reveal";
 
 const page = () => {
   const t = useTranslations("contact");
   return (
     <div>
-      <Reveal y={20} className="component py-10 sm:py-12 md:py-14 lg:py-[60px] w-full mx-auto grid grid-cols-3 gap-[22px]">
+      <Reveal y={20} className="component py-10 sm:py-12 md:py-14 lg:py-[60px] w-full mx-auto grid grid-cols-1 lg:grid-cols-3 gap-[22px]">
         <IconBox title={t("localisation")} icon={<MapPinIcon size={20} />}>
           <p className="text-gray-900 text-base font-semibold">
             {t(infos.location)}
