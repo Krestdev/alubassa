@@ -1,4 +1,5 @@
-import { Contact } from 'lucide-react'
+
+import Contact from '@/components/Contact/Contact'
 import React from 'react'
 
 const ContactsPage = () => {
