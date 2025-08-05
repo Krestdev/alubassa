@@ -21,7 +21,7 @@ const Page = () => {
       <Values />
       <Partner />
       <div className='component max-w-full relative'>
-        <div className="absolute -z-10 w-full h-full top-0 left-0 bg-[url('/images/technicians-2k.webp')] bg-cover bg-center" />
+        <div className="absolute -z-10 w-full h-full top-0 left-0 bg-[url('/Images/technicians-2k.webp')] bg-cover bg-center" />
         <div className='max-w-[1162px] w-full mx-auto flex justify-center md:justify-end p-0 sm:p-7'>
           <div className='max-w-[448px] w-full bg-white rounded-[12px] title-description p-7'>
             <h2>{t("equipeTitle")}</h2>

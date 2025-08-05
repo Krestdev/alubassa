@@ -13,7 +13,7 @@ const ContactFooter = () => {
 
   return (
     <div className="relative flex flex-col component max-w-full">
-      <div className="absolute w-full h-full top-0 left-0 -z-10 bg-primary-800 bg-[url('/images/texture-grid.webp')] bg-blend-multiply bg-cover" />
+      <div className="absolute w-full h-full top-0 left-0 -z-10 bg-primary-800 bg-[url('/Images/texture-grid.webp')] bg-blend-multiply bg-cover" />
       <div className="flex flex-col items-center gap-12 max-w-[918px] w-full mx-auto z-10">
         <RevealEffect effect="fadeInUp">
           <h1 className="text-white text-center">{t("title")}</h1>

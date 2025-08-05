@@ -11,7 +11,7 @@ const Hero = () => {
     <div className="relative overflow-hidden flex justify-center min-h-full h-[calc(100vh-88px)] w-full">
       <div className="absolute w-full h-full top-0 left-0 -z-10 bg-gradient-to-b from-white to-transparent" />
       <img
-        src="/images/background.webp"
+        src="/Images/background.webp"
         alt="background"
         className="absolute top-0 left-0 -z-20 w-full h-full object-cover object-bottom"
       />
