@@ -7,15 +7,16 @@ import React from 'react'
 type Props = {
     href: string;
     title: string;
+    className?: string
 }
 
-function Navlink({href, title}:Props) {
+function Navlink({href, title, className}:Props) {
 
     const fullPath = usePathname();
     const isActive = fullPath.endsWith(href);
 
   return (
-    <Link href={href} className={cn("px-4 h-10 flex items-center gap-2 text-base rounded-sm text-gray-900 hover:bg-primary/10", isActive && "font-semibold text-primary")}>{title}</Link>
+    <Link href={href} className={cn("px-4 h-10 flex items-center gap-2 text-base rounded-sm text-gray-900 hover:bg-primary/10", isActive && "font-semibold text-primary") + " " + className}>{title}</Link>
   )
 }
 

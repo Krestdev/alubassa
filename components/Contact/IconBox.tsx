@@ -1,5 +1,4 @@
 import React from "react";
-import Reveal from "../reveal";
 
 interface Props {
   title: string;

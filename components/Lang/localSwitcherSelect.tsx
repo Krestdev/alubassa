@@ -8,9 +8,10 @@ import { setUserLocale } from '@/services/locale';
 interface Props {
   defaultValue: string;
   children: React.ReactNode;
+  className?: string
 }
 
-function LocaleSelect({ defaultValue, children }: Props) {
+function LocaleSelect({ defaultValue, children, className }: Props) {
   const [isPending, startTransition] = React.useTransition();
 
   function onChange(value: string) {
@@ -22,7 +23,7 @@ function LocaleSelect({ defaultValue, children }: Props) {
 
   return (
     <Select defaultValue={defaultValue} onValueChange={onChange} disabled={isPending}>
-      <SelectTrigger className='flex items-center w-[70px] !gap-0 uppercase bg-transparent text-black border-none shadow-none h-4 text-[14px] font-medium cursor-pointer'>
+      <SelectTrigger className={'flex items-center w-[70px] !gap-0 uppercase bg-transparent text-black border-none shadow-none h-4 text-[14px] font-medium cursor-pointer' + ' ' + className}>
         <SelectValue placeholder="Language" />
       </SelectTrigger>
       <SelectContent className='w-[70px]'>

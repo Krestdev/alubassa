@@ -8,6 +8,7 @@ import ContactFooter from "@/components/ContactFooter"
 import { Metadata } from "next"
 import { cn } from '@/lib/utils';
 import { Toaster } from "@/components/ui/sonner"
+import PageLoader from "@/components/PageLoader"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,7 +18,7 @@ const inter = Inter({
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
-   const messages = (await import(`@/messages/${locale}.json`)).default
+  const messages = (await import(`@/messages/${locale}.json`)).default
   return {
     title: {
       template: "%s - Alubassa",
@@ -25,10 +26,10 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description: messages.metadata.description,
     keywords: ["alubassa, aluminium, aluminum, alucam"],
-    authors: [{name:"krestdev", url:"https://krestdev.com"}, {name:"alubassa"}],
+    authors: [{ name: "krestdev", url: "https://krestdev.com" }, { name: "alubassa" }],
     publisher: "krestdev",
     icons: {
-      icon:"/favicon.ico",
+      icon: "/favicon.ico",
       shortcut: "/favicon.ico",
       apple: "/apple-touch-icon.png",
     },
@@ -56,11 +57,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang={locale}>
       <body className={cn("bg-background antialiased font-sans", inter.variable)}>
         <NextIntlClientProvider locale={locale}>
-          <Header />
-          {children}
-          <ContactFooter />
-          <Footer />
-          <Toaster/>
+          <PageLoader>
+            <Header />
+            {children}
+            <ContactFooter />
+            <Footer />
+          </PageLoader>
+          <Toaster />
         </NextIntlClientProvider>
       </body>
     </html>

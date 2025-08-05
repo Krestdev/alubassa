@@ -3,7 +3,6 @@
 import React, { useEffect, useRef } from 'react';
 
 const Partner = () => {
-    const partner = ["/logo.png", "/logo.png", "/logo.png", "/logo.png", "/logo.png", "/logo.png", "/logo.png", "/logo.png"];
     const containerRef = useRef<HTMLDivElement>(null);
     const scrollerRef = useRef<HTMLDivElement>(null);
     const animationFrameId = useRef<number | null>(null);
@@ -12,6 +11,8 @@ const Partner = () => {
     const speed = 1;
 
     useEffect(() => {
+
+         const partner = ["/logo.png", "/logo.png", "/logo.png", "/logo.png", "/logo.png", "/logo.png", "/logo.png", "/logo.png"];
         if (!containerRef.current || !scrollerRef.current) return;
 
         const container = containerRef.current;
@@ -61,7 +62,7 @@ const Partner = () => {
             container.removeEventListener('mouseenter', () => { });
             container.removeEventListener('mouseleave', () => { });
         };
-    }, [partner]);
+    }, []);
 
     return (
         <div className='w-full overflow-hidden bg-gray-100 py-12'>

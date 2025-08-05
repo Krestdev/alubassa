@@ -39,7 +39,7 @@ export function contactEmail({firstName, lastName, email, subject, phone, messag
 }
 
 
-export function htmlMailSender({firstName, lastName, email, phone, message, subject}:mailProps) {
+export function htmlMailSender({firstName, lastName, email, message, subject}:mailProps) {
     return `
     <!DOCTYPE html>
 <html>

@@ -95,9 +95,9 @@ const ContactForm = () => {
       form.reset();
 
 
-    } catch (error: any) {
+    } catch (error) {
         setIsSubmitting(false);
-      toast({title:t("error"), variant: "destructive", description: error.message});
+      toast({title:t("error"), variant: "destructive", description: String(error)});
       console.error("Erreur:", error);
     }
     }

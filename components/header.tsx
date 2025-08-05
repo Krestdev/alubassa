@@ -6,11 +6,24 @@ import Link from 'next/link'
 import LocaleSwitcher from './Lang/localSwitcher'
 import Navlink from './navlink'
 import MenuToggle from './menuToggle'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Header = () => {
     const t = useTranslations("header");
     const [menuToggle, setMenuToggle] = useState(false);
+
+    useEffect(() => {
+        if (menuToggle) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+
+        // Nettoyage
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [menuToggle]);
 
     const pages = [
         {
@@ -38,7 +51,7 @@ const Header = () => {
                 <span className='hidden lg:flex gap-2'>
                     {
                         pages.map((page, id) => (
-                            <Navlink key={id} title={page.title} href={page.url}/>
+                            <Navlink key={id} title={page.title} href={page.url} />
                         ))
                     }
                 </span>
@@ -48,8 +61,21 @@ const Header = () => {
                 <Link href={"/contact"}><Button variant={"default"}>{t("contact")}</Button></Link>
             </div>
             <span className='inline-block lg:hidden'>
-                <MenuToggle isOpen={menuToggle} toggle={()=>{setMenuToggle(prev=> !prev)}} />
+                <MenuToggle isOpen={menuToggle} toggle={() => { setMenuToggle(prev => !prev) }} />
             </span>
+            <div className={menuToggle ? "flex flex-col gap-2 items-center py-10 absolute top-0 left-0 w-full h-full bg-primary-900 z-50" : "hidden"}>
+                <MenuToggle isOpen={menuToggle} toggle={() => { setMenuToggle(prev => !prev) }} />
+
+                {
+                    pages.map((page, id) => (
+                        <Button onClick={() => { setMenuToggle(false) }} key={id} variant={"link"}>
+                            <Navlink className="text-white" key={id} title={page.title} href={page.url} />
+                        </Button>
+                    ))
+                }
+                <LocaleSwitcher className='text-white' />
+                <Link href={"/contact"}><Button variant={"default"}>{t("contact")}</Button></Link>
+            </div>
         </div>
     )
 }

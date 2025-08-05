@@ -4,7 +4,7 @@ import { contactEmail, htmlMailSender } from "@/lib/email-template";
 
 const SMTP_SERVER_USERNAME = process.env.NEXT_PUBLIC_EMAIL;
 const SMTP_SERVER_PASSWORD = process.env.NEXT_PUBLIC_PASSWORD;
-const SITE_MAIL_RECIEVER = "contact@alubassa.com";
+// const SITE_MAIL_RECIEVER = "contact@alubassa.com";
 
 const transporter = nodemailer.createTransport({
   host: "smtp.titan.email",

@@ -14,15 +14,15 @@ const ProductsComp = () => {
   const imagesObj = [
     {
       id: 0,
-      images: ["/Images/alu_7.png", "/Images/alu_7.png", "/Images/alu_7.png", "/Images/alu_7.png"]
+      images: ["/products/cui1.webp", "/products/cui2.webp", "/products/cui3.webp", "/products/cui4.webp"]
     },
     {
       id: 1,
-      images: ["/Images/alu_8.jpg", "/Images/alu_8.jpg", "/Images/alu_8.jpg", "/Images/alu_8.jpg"]
+      images: ["/products/con1.webp", "/products/con2.webp", "/products/con3.webp", "/products/con4.webp"]
     },
     {
       id: 2,
-      images: ["/Images/alu_9.jpg", "/Images/alu_9.jpg", "/Images/alu_9.jpg", "/Images/alu_9.jpg"]
+      images: ["/products/ind1.webp", "/products/ind2.webp", "/products/ind3.webp", "/products/ind4.webp"]
     },
   ]
 
@@ -36,7 +36,7 @@ const ProductsComp = () => {
         <p className='text-center text-[16px]'>{t("description")}</p>
       </div>
       <div className='flex flex-col items-center gap-8 max-w-[1106px]'>
-        <div className='flex gap-3'>
+        <div className='flex flex-wrap gap-3'>
           <Button onClick={() => setTab(0)} variant={"outline"} className={`${tab === 0 ? "bg-[#A9CAFF] hover:bg-[#A9CAFF]/80" : ""}`}>{t("cuisine")}</Button>
           <Button onClick={() => setTab(1)} variant={"outline"} className={`${tab === 1 ? "bg-[#A9CAFF] hover:bg-[#A9CAFF]/80" : ""}`}>{t("profile")}</Button>
           <Button onClick={() => setTab(2)} variant={"outline"} className={`${tab === 2 ? "bg-[#A9CAFF] hover:bg-[#A9CAFF]/80" : ""}`}>{t("industrie")}</Button>

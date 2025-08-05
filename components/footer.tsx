@@ -3,13 +3,11 @@
 import { useTranslations } from 'next-intl'
 import React from 'react'
 import { Button } from './ui/button'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
 const Footer = () => {
 
     const t = useTranslations("header")
-    const router = useRouter();
 
     const pages = [
         {

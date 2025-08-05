@@ -178,3 +178,30 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes slide-down {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes crumble-away {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9) translateY(-50px);
+    filter: blur(5px);
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.5s forwards;
+}
+
+.animate-crumble-away {
+  animation: crumble-away 1s forwards;
+}
+

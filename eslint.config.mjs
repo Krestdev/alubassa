@@ -1,3 +1,5 @@
+// eslint.config.mjs
+
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
@@ -15,13 +17,15 @@ export default [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
     rules: {
-      // Désactive la règle des attributs alt manquants
+      // Désactive la règle d'utilisation obligatoire de <Image />
+      "@next/next/no-img-element": "off",
+
+      // Désactive la règle des attributs alt manquants (accessibilité)
       "jsx-a11y/alt-text": "off",
-      
+
       // Autres règles personnalisées
       "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
     },
-    // Ignorer les fichiers spécifiques (optionnel)
-    ignores: ["**/*.image.test.js"]
-  }
+    ignores: ["**/*.image.test.js"],
+  },
 ];
