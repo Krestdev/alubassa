@@ -7,11 +7,12 @@ import { Button } from "./ui/button";
 type Props = {
   isOpen: boolean;
   toggle: () => void;
+  color?: string;
 };
 
-export default function MenuToggle({ isOpen, toggle }: Props) {
+export default function MenuToggle({ isOpen, toggle, color="#1D4ED8" }: Props) {
   const lineProps = {
-    stroke: "#1D4ED8", // text-blue-600
+    stroke: color, // text-blue-600
     strokeWidth: 2,
     vectorEffect: "non-scaling-stroke",
     initial: "closed",
