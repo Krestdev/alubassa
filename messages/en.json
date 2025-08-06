@@ -1,142 +1,142 @@
 {
-    "metadata":{
-        "title": "Aluminium & Steel Solutions for the Africa of Tomorrow",
-        "description": "Discover Alubassa, a Cameroonian company specialized in aluminum and steel processing. Quality products, local expertise, customized solutions."
+  "metadata": {
+    "title": "Aluminium & Steel Solutions for the Africa of Tomorrow",
+    "description": "Discover Alubassa, a Cameroonian company specialized in aluminum and steel processing. Quality products, local expertise, customized solutions."
+  },
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "realisations": "Projects",
+    "contact": "Contact",
+    "term": "Terms",
+    "privacy": "Privacy",
+    "copyright": "©2025 Alubassa. All rights reserved",
+    "developed": "Powered by"
+  },
+  "contactFooter": {
+    "title": "A project? An order? Let's talk about it.",
+    "contactUs": "Contact us"
+  },
+  "home": {
+    "hero": {
+      "title": "Aluminum, our material. Reliability, our commitment.",
+      "description": "For over 60 years, Alubassa has designed and manufactured aluminum products built to last. Whether for kitchenware, construction, or industry, our products combine strength, precision, and aesthetics.",
+      "ourProducts": "Our products",
+      "contactUs": "Contact us"
     },
-    "header": {
-        "home": "Home",
-        "about": "About",
-        "products": "Products",
-        "realisations": "Projects",
-        "contact": "Contact",
-        "term": "Terms",
-        "privacy": "Privacy",
-        "copyright": "©2025 Alubassa. All rights reserved",
-        "developed": "Powered by"
+    "imageText": {
+      "title": "Local expertise, international quality.",
+      "description1": "For over three decades, Alubassa has been transforming aluminum in Cameroon into robust, reliable products tailored to the needs of households, businesses, and construction sites.",
+      "description2": "Our mission? To provide every customer with the guarantee of a well-designed, well-finished product made to last.",
+      "button": "Learn more"
     },
-    "contactFooter": {
-        "title": "A project? An order? Let's talk about it.",
-        "contactUs": "Contact us"
-    },
-    "home": {
-        "hero": {
-            "title": "Aluminum, our material. Reliability, our commitment.",
-            "description": "For over 60 years, Alubassa has designed and manufactured aluminum products built to last. Whether for kitchenware, construction, or industry, our products combine strength, precision, and aesthetics.",
-            "ourProducts": "Our products",
-            "contactUs": "Contact us"
-        },
-        "imageText": {
-            "title": "Local expertise, international quality.",
-            "description1": "For over three decades, Alubassa has been transforming aluminum in Cameroon into robust, reliable products tailored to the needs of households, businesses, and construction sites.",
-            "description2": "Our mission? To provide every customer with the guarantee of a well-designed, well-finished product made to last.",
-            "button": "Learn more"
-        },
-        "expertise": {
-            "title": "Over 60 years of experience",
-            "description": "Since our founding in 1963, we have perfected our art of aluminum transformation. This rich history allows us to guarantee products of unmatched quality and durability, passed down from generation to generation."
-        },
-        "products": {
-            "title": "Durable products for multiple uses.",
-            "description": "We design a wide range of aluminum products for kitchenware, construction, and industrial applications.",
-            "cuisine": "Kitchenware",
-            "profile": "Profiles & sheets",
-            "industrie": "Industrial solutions",
-            "seeAll": "View our products"
-        },
-        "whyUs": {
-            "title": "Why do our customers trust us?",
-            "r1": "Quality local manufacturing",
-            "r2": "Over 30 years of expertise",
-            "r3": "Proven durability & longevity",
-            "r4": "Custom delivery according to your needs",
-            "r5": "Committed and responsive team"
-        }
-    },
-    "Apropos": {
-        "metatitle": "About Alubassa – Metallurgical Expertise and Innovation",
-        "metadescription":"Alubassa, a leading player in Central Africa, has been delivering aluminium and steel solutions for industry, construction, and households for over 10 years.",
-        "name": "About",
-        "title": "About Alubassa",
-        "who": "Who are we?",
-        "description1": "Alubassa is a Cameroonian company specializing in aluminum transformation and manufacturing of durable metal solutions",
-        "description2": "For over 10 years, we have supported construction professionals, industrial clients, and individuals with reliable, aesthetic products tailored to local requirements. Based in Douala, our factory features modern equipment and a team of experts committed to delivering consistent quality while respecting standards and deadlines.",
-        "titleMission": "Our mission",
-        "descriptionMission": "To provide quality, accessible, and durable aluminum solutions that contribute to building a more resilient and modern built environment in Africa.",
-        "titleValues": "Our values",
-        "descriptionValues": "To be a national and regional reference in aluminum transformation by combining innovation, reliability, and proximity with our customers.",
-        "titleExpertise": "Our expertise",
-        "descriptionExpertise": {
-            "dex1": "Custom sheet metal cutting and bending",
-            "dex2": "Manufacturing of profiles for construction, furniture, or industrial installations",
-            "dex3": "Mastery of the complete cycle, from raw material to finished product",
-            "dex4": "Mastery of the complete cycle, from raw material to finished product"
-        },
-        "titleEngagement": "Our commitment",
-        "descriptionEngagement": {
-            "den1": "Consistent quality through rigorous controls",
-            "den2": "Respected deadlines, even for complex orders",
-            "den3": "Responsive team attentive to your needs",
-            "den4": "Local production, serving Cameroonian industrial development"
-        },
-        "equipeTitle": "A strong team",
-        "equipeDescription": "Behind every order is a passionate team. Our technicians, engineers, sales staff, and logistics personnel work together to ensure smooth service and complete customer satisfaction."
+    "expertise": {
+      "title": "Over 60 years of experience",
+      "description": "Since our founding in 1963, we have perfected our art of aluminum transformation. This rich history allows us to guarantee products of unmatched quality and durability, passed down from generation to generation."
     },
     "products": {
-        "metatitle": "Our Products – Aluminium, Steel, Cookware & More",
-        "metadescription": "Browse our full product catalog: profiles, sheets, claddings, gutters, cookware, kitchen utensils, aluminium joinery, and industrial solutions.",
-        "name": "Our Products",
-        "title": "Aluminum products designed to last",
-        "cuisine": "Kitchen utensils",
-        "desCuisine": {
-            "d1": "Pots and pans (all sizes)",
-            "d2": "Saucepans, frying pans, and basins",
-            "d3": "Dishes and traditional cooking utensils",
-            "d4": "Robust and durable products used in both household and professional kitchens"
-        },
-        "industriel": "Industrial and technical solutions",
-        "desIndustriel": {
-            "d1": "Custom machined or bent parts",
-            "d2": "Components for machines and frames",
-            "d3": "Aluminum panels for industrial equipment",
-            "d4": "Modular aluminum structures"
-        },
-        "construction": "Construction and fitting products",
-        "desConstruction": {
-            "d1": "Aluminum sheets (raw, corrugated, anodized...)",
-            "d2": "Standard and custom profiles (flat, U-shaped, T-shaped, L-shaped, tubular...)",
-            "d3": "Angle bars, tubes, bars, plates",
-            "d4": "Fastening accessories and finishes"
-        }
+      "title": "Durable products for multiple uses.",
+      "description": "We design a wide range of aluminum products for kitchenware, construction, and industrial applications.",
+      "cuisine": "Kitchenware",
+      "profile": "Profiles & sheets",
+      "industrie": "Industrial solutions",
+      "seeAll": "View our products"
     },
-    "realisations": {
-        "metatitle": "Our Projects – Case Studies & Achievements",
-        "metadescription":"Explore projects completed by Alubassa in construction, industry, and public infrastructure. A trusted partner across the region.",
-        "name": "Projects",
-        "title": "Our Projects"
+    "whyUs": {
+      "title": "Why do our customers trust us?",
+      "r1": "Quality local manufacturing",
+      "r2": "Over 30 years of expertise",
+      "r3": "Proven durability & longevity",
+      "r4": "Custom delivery according to your needs",
+      "r5": "Committed and responsive team"
+    }
+  },
+  "Apropos": {
+    "metatitle": "About Alubassa – Metallurgical Expertise and Innovation",
+    "metadescription": "Alubassa, a leading player in Central Africa, has been delivering aluminium and steel solutions for industry, construction, and households for over 10 years.",
+    "name": "About",
+    "title": "About Alubassa",
+    "who": "Who are we?",
+    "description1": "Alubassa is a Cameroonian company specializing in aluminum transformation and manufacturing of durable metal solutions",
+    "description2": "For over 10 years, we have supported construction professionals, industrial clients, and individuals with reliable, aesthetic products tailored to local requirements. Based in Douala, our factory features modern equipment and a team of experts committed to delivering consistent quality while respecting standards and deadlines.",
+    "titleMission": "Our mission",
+    "descriptionMission": "To provide quality, accessible, and durable aluminum solutions that contribute to building a more resilient and modern built environment in Africa.",
+    "titleValues": "Our values",
+    "descriptionValues": "To be a national and regional reference in aluminum transformation by combining innovation, reliability, and proximity with our customers.",
+    "titleExpertise": "Our expertise",
+    "descriptionExpertise": {
+      "dex1": "Custom sheet metal cutting and bending",
+      "dex2": "Manufacturing of profiles for construction, furniture, or industrial installations",
+      "dex3": "Mastery of the complete cycle, from raw material to finished product",
+      "dex4": "Mastery of the complete cycle, from raw material to finished product"
     },
-    "contact": {
-        "metatitle": "Get in Touch",
-        "metadescription": "Need information or a quote? Contact the Alubassa team in Douala by phone, email, or via our contact form. We’re here to help.",
-        "name": "Contact",
-        "title": "Alubassa supports you in all your metallurgical and industrial projects",
-        "localisation": "Location",
-        "zone": "Bassa Industrial Zone - Douala P.O. Box: 850 - Douala, Cameroon",
-        "mail": "Email address",
-        "phone": "Phone number",
-        "contactUs": "Contact us",
-        "description": "Our friendly team would be delighted to hear from you.",
-        "firstName": "First name",
-        "lastName": "Last name",
-        "email": "Email",
-        "message": "Message",
-        "accept": "You accept our",
-        "privacy": "privacy policy.",
-        "send": "Send message",
-        "subject": "Subject",
-        "success": "Your message has been sent successfully",
-        "error": "We've encountered an error while sending your message."
+    "titleEngagement": "Our commitment",
+    "descriptionEngagement": {
+      "den1": "Consistent quality through rigorous controls",
+      "den2": "Respected deadlines, even for complex orders",
+      "den3": "Responsive team attentive to your needs",
+      "den4": "Local production, serving Cameroonian industrial development"
     },
-    "terms": {
+    "equipeTitle": "A strong team",
+    "equipeDescription": "Behind every order is a passionate team. Our technicians, engineers, sales staff, and logistics personnel work together to ensure smooth service and complete customer satisfaction."
+  },
+  "products": {
+    "metatitle": "Our Products – Aluminium, Steel, Cookware & More",
+    "metadescription": "Browse our full product catalog: profiles, sheets, claddings, gutters, cookware, kitchen utensils, aluminium joinery, and industrial solutions.",
+    "name": "Our Products",
+    "title": "Aluminum products designed to last",
+    "cuisine": "Kitchen utensils",
+    "desCuisine": {
+      "d1": "Pots and pans (all sizes)",
+      "d2": "Saucepans, frying pans, and basins",
+      "d3": "Dishes and traditional cooking utensils",
+      "d4": "Robust and durable products used in both household and professional kitchens"
+    },
+    "industriel": "Industrial and technical solutions",
+    "desIndustriel": {
+      "d1": "Custom machined or bent parts",
+      "d2": "Components for machines and frames",
+      "d3": "Aluminum panels for industrial equipment",
+      "d4": "Modular aluminum structures"
+    },
+    "construction": "Construction and fitting products",
+    "desConstruction": {
+      "d1": "Aluminum sheets (raw, corrugated, anodized...)",
+      "d2": "Standard and custom profiles (flat, U-shaped, T-shaped, L-shaped, tubular...)",
+      "d3": "Angle bars, tubes, bars, plates",
+      "d4": "Fastening accessories and finishes"
+    }
+  },
+  "realisations": {
+    "metatitle": "Our Projects – Case Studies & Achievements",
+    "metadescription": "Explore projects completed by Alubassa in construction, industry, and public infrastructure. A trusted partner across the region.",
+    "name": "Projects",
+    "title": "Our Projects"
+  },
+  "contact": {
+    "metatitle": "Get in Touch",
+    "metadescription": "Need information or a quote? Contact the Alubassa team in Douala by phone, email, or via our contact form. We’re here to help.",
+    "name": "Contact",
+    "title": "Alubassa supports you in all your metallurgical and industrial projects",
+    "localisation": "Location",
+    "zone": "Bassa Industrial Zone - Douala P.O. Box: 850 - Douala, Cameroon",
+    "mail": "Email address",
+    "phone": "Phone number",
+    "contactUs": "Contact us",
+    "description": "Our friendly team would be delighted to hear from you.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "message": "Message",
+    "accept": "You accept our",
+    "privacy": "privacy policy.",
+    "send": "Send message",
+    "subject": "Subject",
+    "success": "Your message has been sent successfully",
+    "error": "We've encountered an error while sending your message."
+  },
+  "terms": {
     "meta": {
       "title": "Terms and Conditions - Alubassa",
       "description": "Read the terms of use of Alubassa's website and the rules related to our services, products, and liability."
@@ -144,32 +144,48 @@
     "title": "Terms and Conditions",
     "sections": [
       {
-        "title": "1. Introduction",
-        "content": "Welcome to www.alubassa.com. By accessing or using this site, you agree to these terms and conditions. If you disagree with any part of them, please do not use our website."
+        "title": "1. Acceptance of Terms",
+        "content": "By accessing and using the www.alubassa.com website, you fully accept these terms and conditions. If you disagree with any part of them, please refrain from using our site."
       },
       {
-        "title": "2. Intellectual Property",
-        "content": "All content on this site (texts, images, logos, videos, etc.) is the exclusive property of Alubassa or used with permission. Any unauthorized reproduction or distribution is prohibited."
+        "title": "2. Website Access",
+        "content": "The site is accessible free of charge to any user with an Internet connection. All related costs (hardware, software, Internet access) are the sole responsibility of the user."
       },
       {
-        "title": "3. Use of the Website",
-        "content": "You agree not to use this site for any unlawful purposes or activities prohibited by law. You must not attempt to compromise the site's security, integrity, or proper functioning."
+        "title": "3. Intellectual Property",
+        "content": "All elements on this website—including texts, images, graphics, logos, videos, icons, and sounds—are the exclusive property of Alubassa or its partners. Any reproduction, distribution, or adaptation without prior written authorization is strictly prohibited."
       },
       {
         "title": "4. Products and Services",
-        "content": "The information provided about our products and services is for informational purposes only. Alubassa reserves the right to change features, prices, or availability at any time without notice."
+        "content": "Alubassa presents the main characteristics of its products for informational purposes only. Images and descriptions are non-contractual. We reserve the right to modify technical specifications, materials, or finishes at any time without notice."
       },
       {
-        "title": "5. Third-Party Links",
-        "content": "The site may contain links to other websites. Alubassa declines all responsibility regarding the content or accuracy of these external sites."
+        "title": "5. Prices and Availability",
+        "content": "Prices, when mentioned, are indicative and may vary depending on market conditions. Product availability is not guaranteed; we recommend contacting us for confirmation."
       },
       {
-        "title": "6. Limitation of Liability",
-        "content": "Alubassa shall not be held liable for any direct or indirect damages resulting from the use of this site."
+        "title": "6. Liability",
+        "content": "Alubassa shall not be held responsible for any errors or omissions in the content provided, nor for any temporary or permanent unavailability of the website. Users are solely responsible for how they use the information provided."
       },
       {
-        "title": "7. Governing Law",
-        "content": "These terms are governed by Cameroonian law. Any dispute will be submitted to the jurisdiction of the courts in Douala, Cameroon."
+        "title": "7. Personal Data",
+        "content": "Some data may be collected via our forms (contact, quote requests). These data are used solely for communication between Alubassa and the user, in accordance with our Privacy Policy."
+      },
+      {
+        "title": "8. External Links",
+        "content": "This site may contain links to third-party websites. Alubassa has no control over these websites and disclaims any responsibility for their content or data practices."
+      },
+      {
+        "title": "9. Changes to Terms",
+        "content": "Alubassa reserves the right to modify these terms and conditions at any time. Users are encouraged to review them regularly."
+      },
+      {
+        "title": "10. Governing Law",
+        "content": "These terms are governed by Cameroonian law. In case of dispute, the competent courts shall be those of Alubassa's registered office."
+      },
+      {
+        "title": "11. Contact",
+        "content": "For any questions regarding these terms, please contact us at: contact@alubassa.com."
       }
     ]
   },
