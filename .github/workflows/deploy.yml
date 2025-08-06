@@ -47,14 +47,14 @@ jobs:
       - name: Set env vars
         run: |
           ssh-keyscan -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
-          echo "DEPLOY_DIR=~/deployments/wintercode-ui/current" >> $GITHUB_ENV
+          echo "DEPLOY_DIR=~/deployments/alubassa/current" >> $GITHUB_ENV
 
       - name: Deploy to VPS
         run: |
           ssh ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} 'bash -s' << EOF
             set -euo pipefail
 
-            DEPLOY_DIR=~/deployments/wintercode-ui/current
+            DEPLOY_DIR=~/deployments/alubassa/current
 
             if [ ! -d $DEPLOY_DIR ]; then
               mkdir -p $DEPLOY_DIR
@@ -69,8 +69,8 @@ jobs:
             export DOCKER_BUILDKIT=0
 
             # Remove any containers that might conflict
-            docker rm -f wintercode-ui 2>/dev/null || true
-            docker rmi current-wintercode-ui:latest 2>/dev/null || true
+            docker rm -f alubassa 2>/dev/null || true
+            docker rmi current-alubassa:latest 2>/dev/null || true
 
             # Build and run the new image
             docker compose up -d --build
