@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
 
@@ -179,29 +180,229 @@
   }
 }
 
-@keyframes slide-down {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes crumble-away {
+@keyframes wave-pulse {
   0% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-    filter: blur(0);
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.6;
   }
   100% {
+    transform: scale(1.2);
     opacity: 0;
-    transform: scale(0.9) translateY(-50px);
-    filter: blur(5px);
   }
 }
 
-.animate-slide-down {
-  animation: slide-down 0.5s forwards;
+.animate-wave-pulse {
+  animation: wave-pulse 0.8s ease-out forwards;
 }
 
-.animate-crumble-away {
-  animation: crumble-away 1s forwards;
+@keyframes wave-pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 0.6; }
+  100% { transform: scale(1.2); opacity: 0; }
 }
 
+@keyframes rotate-back {
+  0% { transform: rotate(45deg) scale(0.8); opacity: 0; }
+  60% { transform: rotate(20deg) scale(0.9); opacity: 0.8; }
+  100% { transform: rotate(0deg) scale(1); opacity: 1; }
+}
+
+.animate-wave-pulse {
+  animation: wave-pulse 0.8s ease-out forwards;
+}
+
+.animate-rotate-back {
+  animation: rotate-back 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+/* Animations initiales - Rebonds */
+@keyframes bounce-first {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.1); }
+}
+
+@keyframes bounce-second {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Animation des vagues */
+@keyframes wave-pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.2); opacity: 0; }
+}
+
+/* Rotation de l'image */
+@keyframes rotate-back {
+  0% { transform: rotate(45deg) scale(0.8); opacity: 0; }
+  100% { transform: rotate(0deg) scale(1); opacity: 1; }
+}
+
+/* Animation finale - Scroll */
+@keyframes scroll-up-down {
+  0% { 
+    transform: translateY(-100%); 
+    opacity: 1;
+  }
+  20% { 
+    transform: translateY(0); 
+    opacity: 1;
+  }
+  80% { 
+    transform: translateY(0); 
+    opacity: 1;
+  }
+  100% { 
+    transform: translateY(-100%); 
+    opacity: 0;
+  }
+}
+
+.animate-scroll-up-down {
+  animation: scroll-up-down 1.5s ease-in-out forwards;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Classes d'animation */
+.animate-bounce-first {
+  animation: bounce-first 0.3s ease-out;
+}
+
+.animate-bounce-second {
+  animation: bounce-second 0.3s ease-out;
+}
+
+.animate-wave-pulse {
+  animation: wave-pulse 0.5s ease-out forwards;
+}
+
+.animate-rotate-back {
+  animation: rotate-back 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+.animate-scroll-up-down {
+  animation: scroll-up-down 1s ease-in-out forwards;
+}
+
+@layer utilities {
+  .animate-fade-in {
+    @apply opacity-0 scale-90 transition-all duration-500 ease-in-out;
+  }
+
+  .show {
+    @apply opacity-100 scale-100;
+  }
+
+  .hide {
+    @apply opacity-0 scale-90;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-scroll-up-down {
+    animation: scrollUpDown 1.5s ease-in-out forwards;
+  }
+
+  @keyframes scrollUpDown {
+    0% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+
+  .animate-scroll-left-right {
+    animation: scrollLeftRight 1.5s ease-in-out forwards;
+  }
+
+  @keyframes scrollLeftRight {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+@layer utilities {
+  .animate-bounce-first {
+    animation: bounceFirst 0.4s ease-out;
+  }
+
+  .animate-bounce-second {
+    animation: bounceSecond 0.4s ease-in;
+  }
+
+  @keyframes bounceFirst {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+  }
+
+  @keyframes bounceSecond {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+
+  .animate-wave-pulse {
+    animation: wavePulse 1.2s ease-in-out infinite;
+  }
+
+  @keyframes wavePulse {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+
+  .animate-rotate-back {
+    animation: rotateBack 1.5s ease-in-out;
+  }
+
+  @keyframes rotateBack {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+  }
+
+  .animate-scroll-up-down {
+    animation: scrollUpDown 1.5s ease-in-out forwards;
+  }
+
+  @keyframes scrollUpDown {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100%); }
+  }
+
+  .animate-scroll-left-right {
+    animation: scrollLeftRight 1.5s ease-in-out forwards;
+  }
+
+  @keyframes scrollLeftRight {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+}

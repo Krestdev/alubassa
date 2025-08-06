@@ -27,7 +27,6 @@ const ProductsComp = () => {
   ]
 
   const [tab, setTab] = useState(0);
-  console.log(tab);
 
   return (
     <RevealGroup y={20} delay={0.125} delayGap={0.25} blur={2} className='component flex flex-col items-center gap-12 overflow-hidden'>
