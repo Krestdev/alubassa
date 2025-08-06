@@ -86,7 +86,7 @@ jobs:
                sleep 12
              done
 
-             if curl --fail http://localhost:3015; then
+             if curl --fail http://localhost:3000; then
                ln -sfn $RELEASE_DIR ~/deployments/alubassa/current
                echo "✅ Deployment successful"
              else
