@@ -1,0 +1,24 @@
+services:
+  alubassa:
+    container_name: alubassa
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3000:3015"
+    networks:
+      - caddy-network
+
+networks:
+  caddy-network:
+    driver: bridge
+    attachable: true
+# networks:
+#   frostNet:
+#     external: true
+# networks:
+#   frostNet:
+#     driver: bridge
+#     attachable: true
+# correct deployment
