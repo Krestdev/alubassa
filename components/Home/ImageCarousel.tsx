@@ -25,7 +25,7 @@ function ImageCarousel() {
     });
   }, [api]);
 
-  const images = ["/car.webp", "/car.webp", "/car.webp"];
+  const images = ["/Alubassa/factory_polish.webp", "/Alubassa/factory_worker.webp", "/Alubassa/polish.webp", "/Alubassa/pots_and_worker.webp", "/Alubassa/tools.webp", "/Alubassa/working_metal.webp", "/Alubassa/technicien.webp", "/Alubassa/polishing_metal.webp", "/Alubassa/technician_order.webp", "/Alubassa/office_screen.webp", "/Alubassa/image_spec.webp", "/Alubassa/factory_photo.webp", "/Alubassa/repair.webp", "/Alubassa/workers_duo.webp"];
 
   return (
       <Carousel

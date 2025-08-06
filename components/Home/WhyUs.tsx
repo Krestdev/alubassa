@@ -9,7 +9,7 @@ const WhyUs = () => {
     const answers = [t("r1"), t("r2"), t("r3"), t("r4"), t("r5")];
   return (
     <RevealGroup y={20} opacity={0} blur={2} className='component grid grid-cols-1 gap-7 lg:grid-cols-2 md:gap-12 lg:gap-18 place-items-center'>
-        <img src="/Images/technicians.webp" alt="technicians" className='w-full h-auto aspect-video rounded-lg object-cover' />
+        <img src="/Alubassa/photo_factory.webp" alt="technicians" className='w-full h-auto aspect-video rounded-lg object-cover' />
         <div className='flex flex-col gap-7 px-7'>
             <h2>{t("title")}</h2>
             <div className='flex flex-col gap-5'>

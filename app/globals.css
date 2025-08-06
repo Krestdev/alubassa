@@ -273,11 +273,11 @@
 
 /* Classes d'animation */
 .animate-bounce-first {
-  animation: bounce-first 0.3s ease-out;
+  animation: bounce-first 0.5s ease-out;
 }
 
 .animate-bounce-second {
-  animation: bounce-second 0.3s ease-out;
+  animation: bounce-second 0.5s ease-out;
 }
 
 .animate-wave-pulse {
@@ -351,11 +351,11 @@
 
 @layer utilities {
   .animate-bounce-first {
-    animation: bounceFirst 0.4s ease-out;
+    animation: bounceFirst 0.5s ease-out;
   }
 
   .animate-bounce-second {
-    animation: bounceSecond 0.4s ease-in;
+    animation: bounceSecond 0.5s ease-in;
   }
 
   @keyframes bounceFirst {
