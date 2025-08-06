@@ -1,14 +1,10 @@
 services:
-  wintercode:
-    container_name: wintercode
+  alubassa:
+    container_name: alubassa
     build:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
-    env_file:
-      - ../shared/.env.prod
-    volumes:
-      - /home/wintercode/backup/wintercode:/app/uploads
     ports:
       - "4000:4000"
     networks:

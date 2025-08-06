@@ -1,48 +1,39 @@
-# ---- Build Stage ----
+# -------- Builder Stage --------
 FROM node:22-alpine AS builder
 
+# Set working directory
 WORKDIR /app
 
+# Install dependencies
 COPY package*.json ./
-
-# Install production dependencies and devDependencies for build
 RUN npm ci
 
-# copy folders to container image
+# Copy app source code
 COPY . .
 
-# Generate Prisma types for TypeScript build
-RUN npx prisma generate && \
-  npm run build
+# Build Next.js app (generates .next folder)
+RUN npm run build
 
-# ---- Runtime Stage ----
+# -------- Runtime Stage --------
 FROM node:22-alpine AS runtime
 
+# Set working directory
 WORKDIR /app
 
-# Copy built files
+# Only copy necessary runtime files
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/node_modules ./node_modules
-# COPY --from=builder /app/generated/prisma ./generated/prisma
-COPY --from=builder /app/prisma ./prisma
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/templates ./templates
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/next.config.ts ./next.config.ts
+# if using TypeScript
+COPY --from=builder /app/tsconfig.json ./tsconfig.json 
 
-# Copy runtime code if needed
-COPY --from=builder /app/src ./src
+# If you use any runtime-only files (e.g. env, i18n, middlewares), copy them too
+# COPY --from=builder /app/.env.prod ./.end
 
-# Install production-only dependencies
-# (optional if you've already installed them above)
-# RUN npm ci --omit=dev
+# Expose default Next.js port
+EXPOSE 3000
 
-# Wait-for script (can also be added via volume or Dockerfile ADD)
-ADD https://raw.githubusercontent.com/eficode/wait-for/v2.2.3/wait-for /wait-for
-RUN chmod +x /wait-for
-
-EXPOSE 5000
-
-# Run prisma migrations and start app after MySQL is up
-CMD sh -c "/wait-for ${DB_HOST:-localhost}:${DB_PORT:-3306} --timeout=360 -- \
-  npx prisma migrate deploy && \
-  npm run start"
-
+# Start Next.js in production
+CMD ["npm", "run", "start"]
