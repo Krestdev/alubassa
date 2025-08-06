@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     ports:
-      - "4000:4000"
+      - "3000:3015"
     networks:
       - caddy-network
 
