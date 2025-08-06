@@ -21,7 +21,7 @@ const Home = () => {
           <p>{t("description1")}<br />{t("description2")}</p>
           <Link href={"/about"}><Button variant={"outline"}>{"En savoir plus"}<ChevronRight size={16} /></Button></Link>
         </div>
-        <img src="/Alubassa/office_worker.webp" alt="alubassa team" className='w-full h-auto lg:max-w-md aspect-[4/3] rounded-md object-cover' />
+        <img src="/Alubassa/polishing_pots.webp" alt="alubassa team" className='w-full h-auto lg:max-w-md aspect-[4/3] rounded-md object-cover' />
       </RevealGroup>
       <Experience />
       <Partner />

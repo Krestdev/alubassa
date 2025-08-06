@@ -4,12 +4,13 @@ import React from "react";
 import { Button } from "./ui/button";
 import { RevealEffect } from "./reveal";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const ContactFooter = () => {
   const t = useTranslations("contactFooter");
   const path = usePathname();
 
-  if(path === "/contact") return null;
+  if (path === "/contact") return null;
 
   return (
     <div className="relative flex flex-col component max-w-full">
@@ -19,9 +20,11 @@ const ContactFooter = () => {
           <h1 className="text-white text-center">{t("title")}</h1>
         </RevealEffect>
         <RevealEffect effect="fadeInUp" delay={0.35}>
+          <Link href={"/contact"}>
             <Button size={"lg"} className="w-fit" variant={"outline"}>
-            {t("contactUs")}
+              {t("contactUs")}
             </Button>
+          </Link>
         </RevealEffect>
       </div>
     </div>

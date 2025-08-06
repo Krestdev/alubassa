@@ -107,7 +107,7 @@ const ContactForm = () => {
     return (
         <div className='component grid grid-cols-1 md:grid-cols-5 gap-7 sm:gap-10 md:gap-14 lg:gap-[72px]'>
             <Reveal blur={3} y={20} className="hidden md:block col-span-2">
-                <img src="/contact.webp" alt="Contact" className='w-full h-fit aspect-[3/4] rounded-[12px] object-cover' />
+                <img src="/Alubassa/office_worker.webp" alt="Contact" className='w-full h-fit aspect-[3/4] rounded-[12px] object-cover' />
             </Reveal>
 
             <Reveal blur={3} opacity={50} y={20} delay={0.35} className='col-span-1 md:col-span-3 flex flex-col gap-12'>

@@ -7,6 +7,7 @@ import LocaleSwitcher from './Lang/localSwitcher'
 import Navlink from './navlink'
 import MenuToggle from './menuToggle'
 import { useEffect, useState } from 'react'
+import { Drawer, DrawerContent } from './ui/drawer'
 
 const Header = () => {
     const t = useTranslations("header");
@@ -28,11 +29,11 @@ const Header = () => {
     const pages = [
         {
             title: t("home"),
-            url: "/"
+            url: "/",
         },
         {
             title: t("about"),
-            url: "/about"
+            url: "/about",
         },
         {
             title: t("products"),
@@ -64,18 +65,33 @@ const Header = () => {
                 <MenuToggle isOpen={menuToggle} toggle={() => { setMenuToggle(prev => !prev) }} />
             </span>
             <div className={menuToggle ? "flex flex-col gap-2 items-center py-10 absolute top-0 left-0 w-full h-full bg-primary-900 z-50" : "hidden"}>
-                <MenuToggle isOpen={menuToggle} toggle={() => { setMenuToggle(prev => !prev) }} />
 
-                {
-                    pages.map((page, id) => (
-                        <Button onClick={() => { setMenuToggle(false) }} key={id} variant={"link"}>
-                            <Navlink className="text-white" key={id} title={page.title} href={page.url} />
-                        </Button>
-                    ))
-                }
-                <LocaleSwitcher className='text-white' />
-                <Link href={"/contact"}><Button variant={"default"}>{t("contact")}</Button></Link>
             </div>
+
+            <Drawer open={menuToggle} onOpenChange={setMenuToggle} direction='right'>
+                <DrawerContent className='flex flex-col gap-5 text-black max-w-[200px]'>
+                    <div className="mx-auto w-full max-w-sm flex flex-col gap-4">
+                        <div className='flex items-center justify-between'>
+                            <MenuToggle isOpen={menuToggle} toggle={() => { setMenuToggle(prev => !prev) }} />
+                            <LocaleSwitcher />
+                        </div>
+
+                        <div className='flex flex-col gap-2'>
+                            {
+                                pages.map((page, id) => (
+                                    <Button onClick={() => { setMenuToggle(false) }} key={id} variant={"link"} className='items-end w-fit'>
+                                        <Navlink className="text-black" key={id} title={page.title} href={page.url} />
+                                    </Button>
+                                ))
+
+                            }
+                            <Button onClick={() => { setMenuToggle(false) }} variant={"link"} className='items-end w-fit'>
+                                <Navlink className="text-black" title={t("contact")} href={"/contact"} />
+                            </Button>
+                        </div>
+                    </div>
+                </DrawerContent>
+            </Drawer>
         </div>
     )
 }
