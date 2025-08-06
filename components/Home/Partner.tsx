@@ -12,7 +12,7 @@ const Partner = () => {
 
     useEffect(() => {
 
-         const partner = ["/logo.png", "/logo.png", "/logo.png", "/logo.png", "/logo.png", "/logo.png", "/logo.png", "/logo.png"];
+         const partner = ["/placeholder.webp", "/placeholder.webp", "/placeholder.webp", "/placeholder.webp", "/placeholder.webp", "/placeholder.webp", "/placeholder.webp", "/placeholder.webp"];
         if (!containerRef.current || !scrollerRef.current) return;
 
         const container = containerRef.current;
