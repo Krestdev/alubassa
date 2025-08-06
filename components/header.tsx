@@ -7,7 +7,7 @@ import LocaleSwitcher from './Lang/localSwitcher'
 import Navlink from './navlink'
 import MenuToggle from './menuToggle'
 import { useEffect, useState } from 'react'
-import { Drawer, DrawerContent } from './ui/drawer'
+import { Drawer, DrawerContent, DrawerTitle } from './ui/drawer'
 
 const Header = () => {
     const t = useTranslations("header");
@@ -71,10 +71,10 @@ const Header = () => {
             <Drawer open={menuToggle} onOpenChange={setMenuToggle} direction='right'>
                 <DrawerContent className='flex flex-col gap-5 text-black max-w-[200px]'>
                     <div className="mx-auto w-full max-w-sm flex flex-col gap-4">
-                        <div className='flex items-center justify-between'>
+                        <DrawerTitle className='flex items-center justify-between'>
                             <MenuToggle isOpen={menuToggle} toggle={() => { setMenuToggle(prev => !prev) }} />
                             <LocaleSwitcher />
-                        </div>
+                        </DrawerTitle>
 
                         <div className='flex flex-col gap-2'>
                             {
