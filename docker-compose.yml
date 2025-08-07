@@ -8,12 +8,11 @@ services:
     ports:
       - "3015:3000"
     networks:
-      - caddy-network
+      - caddy-net
 
 networks:
-  caddy-network:
-    driver: bridge
-    attachable: true
+  caddy-net:
+    external: true
 # networks:
 #   frostNet:
 #     external: true
