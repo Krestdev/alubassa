@@ -64,6 +64,8 @@ jobs:
               git pull origin main
             fi
 
+            ls /root
+
             cd $DEPLOY_DIR
 
             export DOCKER_BUILDKIT=0
