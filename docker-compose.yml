@@ -6,14 +6,13 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     ports:
-      - "3000:3015"
+      - "3015:3000"
     networks:
-      - caddy-network
+      - caddy-net
 
 networks:
-  caddy-network:
-    driver: bridge
-    attachable: true
+  caddy-net:
+    external: true
 # networks:
 #   frostNet:
 #     external: true

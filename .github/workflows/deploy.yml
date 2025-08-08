@@ -1,4 +1,4 @@
-name: Deploy Alubasa Website
+name: Deploy Wintercode Home Page
 
 on:
   push:
@@ -38,75 +38,58 @@ jobs:
       - name: Setup SSH
         uses: webfactory/ssh-agent@v0.9.0
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-private-key: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
 
       - name: Add VPS to known_hosts
         run: |
-          ssh-keyscan -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+          ssh-keyscan -H ${{ secrets.PROD_VPS_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Create release folder on VPS
+      - name: Set env vars
         run: |
-          TIMESTAMP=$(date +"%Y%m%d-%H%M")
-          echo "RELEASE_DIR=~/deployments/alubassa/releases/$TIMESTAMP" >> $GITHUB_ENV
-          echo "DEPLOY_TIME=$TIMESTAMP" >> $GITHUB_ENV
+          ssh-keyscan -H ${{ secrets.PROD_VPS_HOST }} >> ~/.ssh/known_hosts
+          echo "DEPLOY_DIR=~/deployments/alubassa/current" >> $GITHUB_ENV
 
       - name: Deploy to VPS
         run: |
-          ssh ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} 'bash -s' << EOF
-             set -euo pipefail
+          ssh ${{ secrets.PROD_VPS_USER }}@${{ secrets.PROD_VPS_HOST }} 'bash -s' << EOF
+            set -euo pipefail
 
-             TIMESTAMP=${{ env.DEPLOY_TIME }}
-             RELEASE_DIR=~/deployments/alubassa/releases/$TIMESTAMP
+            DEPLOY_DIR=~/deployments/alubassa/current
 
-             mkdir -p $RELEASE_DIR
-             cd $RELEASE_DIR
+            if [ ! -d $DEPLOY_DIR ]; then
+              mkdir -p $DEPLOY_DIR
+              git clone https://github.com/${{ github.repository }} $DEPLOY_DIR
+            else
+              cd $DEPLOY_DIR
+              git pull origin main
+            fi
 
-             git clone https://github.com/${{ github.repository }} temp-clone --depth 1
-             mv temp-clone/* temp-clone/.* . 2>/dev/null || true
-             rm -rf temp-clone
+            ls /root
 
-             # cp ~/deployments/alubassa/shared/.env.prod .env.prod
-             export DOCKER_BUILDKIT=0
+            cd $DEPLOY_DIR
 
-             # Remove any containers that might conflict
-             docker rm -f alubassa 2>/dev/null || true
+            export DOCKER_BUILDKIT=0
 
-             COMPOSE_PROJECT_NAME=default docker compose -f docker-compose.yml build
-             COMPOSE_PROJECT_NAME=default docker compose -f docker-compose.yml up -d
-             # docker compose -f docker-compose.yml build
-             # docker compose -f docker-compose.yml up -d
+            # Remove any containers that might conflict
+            docker rm -f alubassa 2>/dev/null || true
+            docker rmi current-alubassa:latest 2>/dev/null || true
 
-             # Health check loop
-             for i in {1..10}; do
-               if curl --fail http://localhost:3000; then
-                 echo "✅ Health check passed"
-                 break
-               fi
-               echo "⏳ Waiting for app to be ready... ($i/10)"
-               sleep 12
-             done
+            # Build and run the new image
+            docker compose up -d --build
 
-             if curl --fail http://localhost:3015; then
-               ln -sfn $RELEASE_DIR ~/deployments/alubassa/current
-               echo "✅ Deployment successful"
-             else
-               echo "❌ Health check failed, rolling back"
-               if [ -L ~/deployments/alubassa/current ]; then
-                 PREV=$(readlink ~/deployments/alubassa/current)
-                 # docker compose -f $RELEASE_DIR/docker-compose.yml --env-file .env.prod down || true
-                 docker compose -f $RELEASE_DIR/docker-compose.yml down || true
-                 ln -sfn $PREV ~/deployments/alubassa/current
-                 # docker compose -f $PREV/docker-compose.yml --env-file $PREV/.env.prod up -d
-                 docker compose -f $PREV/docker-compose.yml up -d
-               else
-                 echo "⚠️ No previous release to roll back to"
-               fi
-               exit 1
-             fi
+            # Health check loop
+            for i in {1..10}; do
+              if curl --fail http://localhost:3015; then
+                echo "✅ Health check passed"
+                break
+              fi
+              echo "⏳ Waiting for app to be ready... ($i/10)"
+              sleep 6
+            done
 
-             echo "🎯 Deployment complete for release $TIMESTAMP"
-             exit 0
-           EOF
+            echo "🎯 Deployment complete"
+            exit 0
+          EOF
 
       - name: Confirm remote session is done
         run: echo "🧠 SSH session completed cleanly"
