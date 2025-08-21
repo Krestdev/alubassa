@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useEffect, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 
 const Partner = () => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -9,10 +10,11 @@ const Partner = () => {
     const scrollAmount = useRef(0);
     const isPaused = useRef(false);
     const speed = 1;
+    const t = useTranslations("home.partner")
 
     useEffect(() => {
 
-         const partner = ["/placeholder.webp", "/placeholder.webp", "/placeholder.webp", "/placeholder.webp", "/placeholder.webp", "/placeholder.webp", "/placeholder.webp", "/placeholder.webp"];
+        const partner = ["/placeholder.webp", "/placeholder.webp", "/placeholder.webp", "/placeholder.webp", "/placeholder.webp", "/placeholder.webp", "/placeholder.webp", "/placeholder.webp"];
         if (!containerRef.current || !scrollerRef.current) return;
 
         const container = containerRef.current;
@@ -65,14 +67,20 @@ const Partner = () => {
     }, []);
 
     return (
-        <div className='w-full overflow-hidden bg-gray-100 py-12'>
-            <div ref={containerRef} className='relative w-full'>
-                <div className='max-w-[1106px] w-full mx-auto overflow-x-hidden'>
-                    <div
-                        ref={scrollerRef}
-                        className='flex gap-5'
-                        style={{ willChange: 'transform' }}
-                    />
+        <div className='w-full flex flex-col items-center gap-4'>
+            <div className='px-7 lg:px-0 header-component'>
+                <h2 className='text-black'>{t("title")}</h2>
+                <p className='text-center'>{t("description")}</p>
+            </div>
+            <div className='w-full overflow-hidden bg-gray-100 py-12'>
+                <div ref={containerRef} className='relative w-full'>
+                    <div className='max-w-[1106px] w-full mx-auto overflow-x-hidden'>
+                        <div
+                            ref={scrollerRef}
+                            className='flex gap-5'
+                            style={{ willChange: 'transform' }}
+                        />
+                    </div>
                 </div>
             </div>
         </div>
