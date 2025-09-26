@@ -1,5 +1,4 @@
 import Values from '@/components/About/Values'
-import Partner from '@/components/Home/Partner'
 import { RevealGroup } from '@/components/reveal'
 import { Button } from '@/components/ui/button'
 import { ChevronRight } from 'lucide-react'
@@ -19,7 +18,6 @@ const Page = () => {
         <img src="/Alubassa/alubassa_factory.webp" alt="alubassa team" className='w-full h-auto lg:max-w-md aspect-[4/3] rounded-md object-cover' />
       </RevealGroup>
       <Values />
-      <Partner />
       <div className='component max-w-full relative'>
         <div className="absolute -z-10 w-full h-full top-0 left-0 bg-[url('/Images/technicians-2k.webp')] bg-cover bg-center" />
         <div className='max-w-[1162px] w-full mx-auto flex justify-center md:justify-end p-0 sm:p-7'>

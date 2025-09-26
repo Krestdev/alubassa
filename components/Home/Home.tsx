@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { Button } from '../ui/button'
 import Experience from './CarouselComp'
 import Hero from './Hero'
-import Partner from './Partner'
 import ProductsComp from './ProductsComp'
 import WhyUs from './WhyUs'
 import { RevealGroup } from '../reveal'
@@ -24,7 +23,6 @@ const Home = () => {
         <img src="/Alubassa/polishing_pots.webp" alt="alubassa team" className='w-full h-auto lg:max-w-md aspect-[4/3] rounded-md object-cover' />
       </RevealGroup>
       <Experience />
-      <Partner />
       <ProductsComp />
       <WhyUs />
     </div>

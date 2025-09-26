@@ -6,6 +6,6 @@ type contactInfos = {
 
 export const infos:contactInfos = {
     location: "zone",
-    mail:"contact@alubassa.com",
-    phone: ["+237233371519", "+237673371519"],
+    mail:"alubassa@alubassa.com",
+    phone: ["+237696402753"],
 }
